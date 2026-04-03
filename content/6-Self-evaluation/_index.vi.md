@@ -6,7 +6,7 @@ chapter: false
 pre: " <b> 6. </b> "
 ---
 
-Trong suốt thời gian thực tập tại **AWS First Cloud Journey (FCJ)** từ **8/9/2025** đến **9/12/2025**, tôi đã có cơ hội học hỏi, rèn luyện và áp dụng kiến thức đã được trang bị tại trường vào môi trường làm việc thực tế.  
+Trong suốt thời gian thực tập tại **AWS First Cloud Journey (FCJ)** từ **4/1/2026** đến **5/4/2026**, tôi đã có cơ hội học hỏi, rèn luyện và áp dụng kiến thức đã được trang bị tại trường vào môi trường làm việc thực tế.  
 Tôi đã tham gia dự án **MapVibe** - một nền tảng khám phá địa điểm được hỗ trợ bởi AI, qua đó cải thiện kỹ năng về **hạ tầng cloud, thực hành DevOps, phát triển phần mềm và các dịch vụ AWS**.
 
 Là một người hướng ngoại, hay giao tiếp, tôi luôn cố gắng hoàn thành tốt nhiệm vụ, tuân thủ nội quy, và tích cực trao đổi với đồng nghiệp và mentor để nâng cao hiệu quả công việc. Tôi luôn giữ tinh thần trách nhiệm cao và hoàn thành công việc đúng hạn với chất lượng tốt.

@@ -6,7 +6,7 @@ chapter: false
 pre: " <b> 6. </b> "
 ---
 
-During my internship at **AWS First Cloud Journey (FCJ)** from **September 8, 2025** to **December 9, 2025**, I had the opportunity to learn, practice, and apply my knowledge in a real-world working environment.  
+During my internship at **AWS First Cloud Journey (FCJ)** from **January 4, 2026** to **April 5, 2026**, I had the opportunity to learn, practice, and apply my knowledge in a real-world working environment.  
 I participated in the **MapVibe project** - an AI-powered location discovery platform, through which I improved my skills in **cloud infrastructure, DevOps practices, software development, and AWS services**.
 
 As an extroverted person who enjoys communication, I always strived to complete tasks well, complied with workplace regulations, and actively engaged with colleagues and mentors to improve work efficiency. I maintained a strong sense of responsibility and consistently delivered quality work on time.
