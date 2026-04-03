@@ -1,4 +1,5 @@
 baseURL = "https://tuandang304.github.io/InternshipReport/"
+canonifyURLs = true
 
 # Change the default theme to be use when building the site with Hugo
 theme = "hugo-theme-learn"
