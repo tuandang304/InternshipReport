@@ -89,4 +89,4 @@ Tham dự phiên chia sẻ "Automated Prompt Engineering: Enhancing LLM Output Q
 
 ### Ảnh Sự Kiện
 
-![Cloud Mastery - Phiên chia sẻ Automated Prompt Engineering](/images/4-Event/event_2.jpg)
+![Cloud Mastery - Phiên chia sẻ Automated Prompt Engineering](/images/4-Event/event2.jpg)

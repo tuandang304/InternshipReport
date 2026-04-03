@@ -89,4 +89,4 @@ What stood out most was the structured prompt framework (Role, Instruction, Cont
 
 ### Event Photos
 
-![Cloud Mastery - Automated Prompt Engineering Session](/images/4-Event/event_2.jpg)
+![Cloud Mastery - Automated Prompt Engineering Session](/images/4-Event/event2.jpg)
