@@ -6,20 +6,19 @@ chapter: false
 pre: " <b> 2. </b> "
 ---
 
-# MAPVIBE - Nền tảng Khám phá địa điểm ăn uống với AI
-*(Khám phá các địa điểm ăn uống và các địa điểm khác tại Thành phố Hồ Chí Minh sử dụng các gợi ý ngôn ngữ tự nhiên và thông tin chi tiết theo ngữ cảnh)*
+# AntEdu - Nền tảng Học tập & Quản lý Thông minh với AI
 
 ---
 
 ## 1. Tóm tắt chung
 
-Chúng tôi là một nhóm gồm 5 sinh viên Công nghệ Thông tin đang thực tập, cùng nhau phát triển một dự án mang tên MapVibe. MapVibe là một nền tảng website sáng tạo, giúp người dùng, đặc biệt là thế hệ **GenZ**, tìm kiếm các địa điểm ăn uống bằng ngôn ngữ tự nhiên, dựa trên **tâm trạng và cảm xúc thật** của họ. Ví dụ, thay vì tìm "quán cà phê", người dùng có thể hỏi "Hôm nay tôi đang buồn, có quán đồ uống nào giúp tôi giải tỏa nỗi buồn không?".
+Chúng tôi là một nhóm gồm 5 sinh viên Công nghệ Thông tin đang thực tập, cùng nhau phát triển một dự án mang tên **EduCare**. EduCare là một nền tảng học trực tuyến sáng tạo nhắm đến thị trường Việt Nam, tích hợp **AI đa tầng** để mang đến trải nghiệm giáo dục cá nhân hóa sâu sắc và thông minh. Nền tảng kết hợp các tính năng quản lý học tập truyền thống với các khả năng AI tiên tiến — từ tự động sinh nội dung giáo dục đến trợ lý AI hội thoại.
 
-Mục tiêu của dự án là cải tiến phương pháp tìm kiếm truyền thống và tạo ra một trải nghiệm cá nhân hóa, sâu sắc hơn cho người dùng. Chúng tôi lựa chọn AWS làm nền tảng đám mây để tận dụng các dịch vụ mạnh mẽ, linh hoạt và tối ưu chi phí. Điều này giúp đội ngũ tập trung tối đa nguồn lực vào phát triển tính năng cốt lõi, giảm thiểu gánh nặng quản lý hạ tầng, đồng thời giữ cho chi phí vận hành nằm trong **ngân sách 200 đô la từ gói AWS Free Tier**, rất phù hợp với một dự án sinh viên.
+Mục tiêu của dự án là cách mạng hóa cách sinh viên học trực tuyến bằng cách cung cấp các công cụ AI tự thích ứng theo nhu cầu của từng người học. Hệ thống được xây dựng trên **kiến trúc microservice** gồm 4 dịch vụ độc lập: frontend React, backend API Spring Boot, dịch vụ AI dựa trên FastAPI, và lõi trợ lý AI agentic được vận hành bởi **AWS Bedrock**. Kiến trúc này đảm bảo khả năng mở rộng, dễ bảo trì, và có thể phát triển từng thành phần một cách độc lập.
 
-Tính năng cốt lõi của MapVibe cho phép người dùng truy vấn bằng ngôn ngữ tự nhiên để tìm kiếm địa điểm phù hợp với tâm trạng hoặc nhu cầu cụ thể của họ. Hệ thống sẽ phân tích và trả về những gợi ý phù hợp nhất, kèm theo các bài đánh giá và thông tin chi tiết.
+Các tính năng cốt lõi của EduCare bao gồm: sinh nội dung giáo dục bằng AI (tài liệu, bài tập, lộ trình học) từ tài liệu PDF được tải lên, hệ thống quản lý lớp học toàn diện (giao bài, nộp bài, chấm điểm, điểm danh), và **Slozy** — trợ lý AI thông minh được xây dựng trên kiến trúc **LangGraph ReAct Agent** có khả năng tìm kiếm cơ sở dữ liệu lý thuyết qua RAG, gợi ý lộ trình học cá nhân hóa, và đề xuất bài kiểm tra thông qua hội thoại tự nhiên.
 
-Để đạt được mục tiêu này, nhóm chúng tôi sẽ chịu trách nhiệm toàn bộ quá trình: từ thiết kế, phát triển website, xây dựng và cấu hình hạ tầng trên AWS (sử dụng các dịch vụ như **Bedrock**, **Lambda**, **RDS**), cho đến việc tự tổng hợp bộ dữ liệu ban đầu về các địa điểm.
+Để đạt được mục tiêu này, nhóm chúng tôi chịu trách nhiệm toàn bộ vòng đời phát triển: từ thiết kế hệ thống, phát triển full-stack, tích hợp AI sử dụng **OpenAI API** và **AWS Bedrock AgentCore**, đến triển khai hạ tầng với **Docker Compose** và **AWS S3** cho lưu trữ file.
 
 ---
 
@@ -27,22 +26,28 @@ Tính năng cốt lõi của MapVibe cho phép người dùng truy vấn bằng 
 
 ### Vấn đề là gì?
 
-- Các nền tảng bản đồ truyền thống như Google Maps phụ thuộc vào tìm kiếm dựa trên từ khóa và bộ lọc tĩnh, gặp khó khăn trong việc diễn giải các truy vấn tinh tế, giàu ngữ cảnh (ví dụ: "quán cà phê yên tĩnh gần sông có chỗ ngồi ngoài trời").
-- Người dùng lãng phí thời gian điều hướng nhiều ứng dụng để tìm địa điểm ăn uống hoặc hoạt động phù hợp.
-- Các giải pháp hiện tại thiếu giao diện trò chuyện và không kết hợp được các tín hiệu ngữ cảnh như thời gian, tâm trạng hoặc kích thước nhóm.
+- Các nền tảng học trực tuyến truyền thống áp dụng phương pháp **đồng nhất cho tất cả**, thiếu khả năng thích ứng nội dung và lộ trình học theo nhu cầu cá nhân, tốc độ học, và lỗ hổng kiến thức của từng sinh viên.
+- Giáo viên mất quá nhiều thời gian cho các tác vụ lặp đi lặp lại như **tạo bài tập thủ công, biên soạn tài liệu học tập, và xây dựng lộ trình học** từ các tài liệu có sẵn, làm giảm khả năng tập trung vào việc giảng dạy và hướng dẫn thực tế.
+- Các giải pháp e-learning hiện tại thiếu **giao diện trò chuyện thông minh** có khả năng hiểu câu hỏi của sinh viên trong ngữ cảnh, truy xuất lý thuyết liên quan, và cung cấp hướng dẫn cá nhân hóa — buộc sinh viên phải tự tìm đường qua các nội dung tĩnh.
+- Sự thiếu kết nối giữa **quản lý nội dung, đánh giá, và học tập hỗ trợ bởi AI** trên nhiều công cụ khác nhau tạo ra trải nghiệm phân mảnh cho cả giáo viên và người học.
 
 ### Giải pháp
 
-MapVibe sử dụng **AWS Bedrock (mô hình Titan embedding, mô hình LLM Claude)** để phân tích các gợi ý ngôn ngữ tự nhiên bằng tiếng Việt và tiếng Anh, chuyển đổi chúng thành các truy vấn có cấu trúc. Nó truy xuất và xếp hạng kết quả từ cơ sở dữ liệu nội bộ **RDS (PostgreSQL)** với dữ liệu địa điểm được lập chỉ mục địa lý và các tính năng hỗ trợ vector, cung cấp giao diện kết hợp (tìm kiếm trò chuyện + bộ lọc danh mục). Nội dung do người dùng tạo (đánh giá, gợi ý địa điểm) được kiểm duyệt sử dụng **AWS Rekognition**, đảm bảo an toàn và chất lượng thông qua phân tích driven by AI tiên tiến.
+EduCare sử dụng kiến trúc AI đa tầng để giải quyết những thách thức này:
+
+- **Dịch vụ Sinh Nội dung AI (FastAPI + OpenAI)**: Tự động sinh bài tập, tài liệu học tập, và lộ trình học có cấu trúc từ tài liệu PDF được tải lên. Giáo viên chỉ cần tải lên tài liệu khóa học, và AI sẽ tạo ra nội dung giáo dục sẵn sàng sử dụng, được lưu trữ và phân phối qua **AWS S3**.
+- **Trợ lý AI Slozy (LangGraph + AWS Bedrock AgentCore)**: Trợ lý AI hội thoại được xây dựng trên kiến trúc **ReAct Agent** với 3 công cụ tích hợp — `search_theory_database` (truy xuất lý thuyết dựa trên RAG qua pgvector), `suggest_roadmap` (sinh lộ trình học cá nhân hóa), và `suggest_quiz` (đề xuất bài kiểm tra thích ứng). Slozy trả về các widget UI đặc biệt mà frontend render thành các thành phần tương tác.
+- **Quản lý Học tập Toàn diện (Spring Boot)**: Quản lý toàn bộ vòng đời lớp học bao gồm tạo lớp, phân phối bài tập, xử lý nộp bài, chấm điểm, điểm danh, và tổ chức nội dung phân cấp (Sách → Chương → Mục → Tiểu mục → Bài học).
+- **Nền tảng Thống nhất (React + TypeScript)**: Một giao diện responsive duy nhất tích hợp mượt mà tất cả các dịch vụ, mang đến trải nghiệm liền mạch cho cả giáo viên và sinh viên.
 
 ### Lợi ích và ROI
 
-- **Tốc độ**: Giảm thời gian khám phá địa điểm từ vài phút xuống vài giây.
-- **Cá nhân hóa**: Kết quả nhận biết ngữ cảnh dựa trên sở thích và hành vi của người dùng, powered by AI.
-- **Tự động hóa**: Loại bỏ bộ lọc thủ công với phân tích ý định driven by AI.
-- **Khả năng mở rộng**: Cơ sở hạ tầng AWS toàn cầu đảm bảo độ trễ thấp và khả năng phục hồi.
-- **Hiệu quả chi phí**: Tối ưu hóa để phù hợp với ngân sách $200 tín dụng từ AWS Free Tier cho toàn bộ chu kỳ phát triển và triển khai ban đầu.
-- **Tiềm năng thương mại**: Cơ hội hợp tác với các doanh nghiệp địa phương hoặc tích hợp với các hệ thống đặt phòng nội bộ.
+- **Năng suất Giáo viên**: Giảm đáng kể thời gian tạo nội dung bằng cách tự động hóa việc sinh bài tập và lộ trình từ tài liệu có sẵn.
+- **Học tập Cá nhân hóa**: Trợ lý AI thích ứng theo trình độ của từng sinh viên, cung cấp hướng dẫn theo ngữ cảnh thông qua hội thoại tự nhiên.
+- **Quản lý Toàn diện**: Hỗ trợ toàn bộ vòng đời lớp học, loại bỏ nhu cầu sử dụng nhiều công cụ rời rạc.
+- **Khả năng Mở rộng**: Kiến trúc microservice cho phép mở rộng độc lập từng thành phần theo yêu cầu.
+- **Tương tác Thông minh**: Truy xuất kiến thức dựa trên RAG đảm bảo phản hồi chính xác, phù hợp với chương trình giảng dạy từ trợ lý AI.
+- **Hiệu quả Chi phí**: Tận dụng Docker Compose cho phát triển local và các dịch vụ AWS cho production giúp quản lý chi phí hạ tầng hợp lý.
 
 ---
 

@@ -6,43 +6,48 @@ chapter: false
 pre: " <b> 2. </b> "
 ---
 
-# MAPVIBE - AI-Powered Map Location Discovery Platform
-*(Discover dining and other locations in Ho Chi Minh City using natural-language prompts and contextual insights)*
+# Slothub - Agentic Learning & Management Platform
 
 ---
 
 ## 1. Executive Summary
 
-We are a team of 5 Information Technology students working together to develop a project called MapVibe. MapVibe is an innovative web platform that helps users, especially **GenZ**, find dining locations using natural language based on their **mood and genuine emotions**. For example, instead of searching for "coffee shop", users can ask "I'm feeling sad today, is there any drink place that can help me relieve my sadness?".
+We are a team of 5 Information Technology students working together to develop a project called **EduCare**. EduCare is an innovative online learning platform targeting the Vietnamese market, integrating **multi-layered AI** to deliver a deeply personalized and intelligent educational experience. The platform combines traditional learning management features with cutting-edge AI capabilities — from automated content generation to a conversational AI tutor.
 
-The project's goal is to improve traditional search methods and create a more personalized, deeper experience for users. We chose AWS as our cloud platform to leverage powerful, flexible, and cost-effective services. This allows the team to focus maximum resources on developing core features, minimizing infrastructure management burden, while keeping operating costs within the **$200 budget from AWS Free Tier credits**, which is very suitable for a student project.
+The project's goal is to revolutionize the way students learn online by providing AI-powered tools that adapt to each learner's needs. The system is built on a **microservice architecture** consisting of 4 independent services: a React frontend, a Spring Boot backend API, a FastAPI-based AI service, and an agentic AI tutor core powered by **AWS Bedrock**. This architecture ensures scalability, maintainability, and the ability to evolve each component independently.
 
-MapVibe's core feature allows users to query using natural language to find locations that match their mood or specific needs. The system will analyze and return the most suitable suggestions, along with reviews and detailed information.
+EduCare's core features include: AI-generated educational content (documents, exercises, learning roadmaps) from uploaded PDF materials, a comprehensive classroom management system (assignments, submissions, grading, attendance), and **Slozy** — an intelligent AI tutor built with **LangGraph ReAct Agent** architecture that can search theory databases via RAG, suggest personalized learning roadmaps, and recommend quizzes through natural conversation.
 
-To achieve this goal, our team will be responsible for the entire process: from design, website development, building and configuring infrastructure on AWS (using services such as **Bedrock**, **Lambda**, **RDS**), to independently compiling the initial dataset of locations.
+To achieve this goal, our team is responsible for the entire development lifecycle: from system design, full-stack development, AI integration using **OpenAI API** and **AWS Bedrock AgentCore**, to infrastructure deployment with **Docker Compose** and **AWS S3** for file storage.
 
 ---
 
 ## 2. Problem Statement
 
-### What’s the Problem?
+### What's the Problem?
 
-- Traditional map platforms like Google Maps rely on keyword-based searches and static filters, struggling to interpret nuanced, context-rich queries (e.g., “quiet coffee shop near the river with outdoor seating”).
-- Users waste time navigating multiple apps to find suitable dining or activity locations.
-- Existing solutions lack conversational interfaces and fail to incorporate contextual signals like time, mood, or group size.
+- Traditional online learning platforms offer a **one-size-fits-all** approach, lacking the ability to adapt content and learning paths to individual student needs, learning pace, and knowledge gaps.
+- Teachers spend excessive time on repetitive tasks such as **manually creating exercises, generating learning materials, and building study roadmaps** from existing documents, reducing their capacity for actual teaching and mentoring.
+- Existing e-learning solutions lack **intelligent conversational interfaces** that can understand student queries in context, retrieve relevant theory, and provide personalized guidance — forcing students to navigate through static content on their own.
+- The disconnect between **content management, assessment, and AI-assisted learning** across multiple tools creates a fragmented experience for both educators and learners.
 
 ### The Solution
 
-MapVibe employs **AWS Bedrock (Titan embedding model, Claude LLM model)** to parse natural-language prompts in Vietnamese and English, converting them into structured queries. It retrieves and ranks results from an internal **RDS (PostgreSQL) database** with geo-indexed place data and vector support features, offering a hybrid interface (conversational search + category filters). User-generated content (reviews, place suggestions) is moderated using **AWS Rekognition**, ensuring safety and quality through advanced AI-driven analysis.
+EduCare employs a multi-layered AI architecture to address these challenges:
+
+- **AI Content Generation Service (FastAPI + OpenAI)**: Automatically generates exercises, learning materials, and structured roadmaps from uploaded PDF documents. Teachers simply upload course materials, and the AI produces ready-to-use educational content, stored and served via **AWS S3**.
+- **Slozy AI Tutor (LangGraph + AWS Bedrock AgentCore)**: A conversational AI tutor built on **ReAct Agent** architecture with 3 integrated tools — `search_theory_database` (RAG-based theory retrieval via pgvector), `suggest_roadmap` (personalized learning path generation), and `suggest_quiz` (adaptive quiz recommendations). Slozy returns special UI widgets that the frontend renders as interactive components.
+- **Comprehensive Learning Management (Spring Boot)**: Full-featured classroom lifecycle management including class creation, assignment distribution, submission handling, grading, attendance tracking, and hierarchical content organization (Book → Chapter → Section → Subsection → Lesson).
+- **Unified Platform (React + TypeScript)**: A single responsive interface that seamlessly integrates all services, providing a cohesive experience for both teachers and students.
 
 ### Benefits and ROI
 
-- **Speed**: Reduces location discovery time from minutes to seconds.
-- **Personalization**: Context-aware results based on user preferences and behavior, powered by AI.
-- **Automation**: Eliminates manual filtering with AI-driven intent parsing.
-- **Scalability**: Global AWS infrastructure ensures low latency and resilience.
-- **Cost Efficiency**: Optimized to fit within a $200 credit from AWS Free Tier for the entire development and initial deployment cycle.
-- **Commercial Potential**: Opportunities for partnerships with local businesses or integration with internal booking systems.
+- **Teacher Productivity**: Dramatically reduces time spent on content creation by automating exercise and roadmap generation from existing materials.
+- **Personalized Learning**: AI-driven tutoring adapts to each student's level, providing contextual guidance through natural conversation.
+- **Comprehensive Management**: End-to-end classroom lifecycle support eliminates the need for multiple disconnected tools.
+- **Scalability**: Microservice architecture allows independent scaling of each component based on demand.
+- **Intelligent Interaction**: RAG-based knowledge retrieval ensures accurate, curriculum-aligned responses from the AI tutor.
+- **Cost Efficiency**: Leveraging Docker Compose for local development and AWS services for production keeps infrastructure costs manageable.stems.
 
 ---
 

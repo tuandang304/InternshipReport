@@ -6,118 +6,96 @@ chapter: false
 pre: " <b> 4.1. </b> "
 ---
 
-# Báo Cáo Tóm Tắt: "AWS Cloud Day Vietnam"
+# Báo Cáo Tóm Tắt: "AWS re:Invent re:Cap Vietnam — HCMC 2025"
 
 ### Tổng Quan Sự Kiện
 
-- **Tên Sự Kiện:** AWS Cloud Day Vietnam  
-- **Ngày:** 18 tháng 9, 2025  
+- **Tên Sự Kiện:** AWS re:Invent re:Cap Vietnam — Thành phố Hồ Chí Minh
+- **Ngày:** 29 tháng 1, 2026  
 - **Vai Trò:** Người tham dự  
 - **Hình Thức:** Hội nghị đa track, trực tiếp  
-- **Địa Điểm:** Tầng 26, Tòa nhà Bitexco Financial Tower, Quận 1, Thành phố Hồ Chí Minh, Việt Nam
+- **Địa Điểm:** Thành phố Hồ Chí Minh, Việt Nam
 
-AWS Cloud Day Vietnam là một sự kiện trọn ngày toàn diện quy tụ các chuyên gia AWS, đối tác và khách hàng địa phương để chia sẻ best practices, câu chuyện migration thực tế, và những đổi mới mới nhất trong cloud computing. Sự kiện có nhiều track song song bao gồm nền tảng cloud, bảo mật, dữ liệu & phân tích, AI/ML, và các chiến lược hiện đại hóa trên AWS.
+Tiếp nối thành công của các sự kiện AWS re:Invent re:Cap trong những năm trước, AWS tiếp tục có cơ hội đồng hành cùng cộng đồng AWS tại Việt Nam trong sự kiện re:Cap năm nay. Sự kiện re:Invent Recap tại TP. Hồ Chí Minh mang đến cơ hội độc quyền để đi sâu vào các bản phát hành sản phẩm mới nhất, cập nhật dịch vụ và các best practices về kiến trúc trực tiếp từ các chuyên gia AWS. Đây là dịp để cộng đồng cùng nhau nhìn lại những điểm nhấn quan trọng nhất từ AWS re:Invent, chia sẻ kiến thức, kinh nghiệm thực tế và cập nhật các xu hướng công nghệ mới nhất trên nền tảng AWS.
+
+### Sự Kiện Dành Cho Ai?
+
+Sự kiện được thiết kế cho hai đối tượng chính:
+
+- **Builders (Người xây dựng)** — Các workshop thực hành, phiên kỹ thuật chuyên sâu và cơ hội kết nối với cộng đồng đam mê cloud, giúp trang bị kiến thức và mối quan hệ để đẩy nhanh dự án và thúc đẩy đổi mới sáng tạo với AWS.
+- **Lãnh đạo Kinh doanh & Kỹ thuật** — Cơ hội khám phá các triển khai AI chiến lược, tương tác với đội ngũ lãnh đạo AWS và kết nối với các đồng nghiệp đang trải qua hành trình chuyển đổi số tương tự.
+
+Tại sự kiện, người tham dự có cơ hội:
+- Cập nhật nhanh những announcement quan trọng nhất từ AWS re:Invent
+- Hiểu sâu hơn về xu hướng Cloud, AI/ML, Security, Data, Serverless…
+- Giao lưu, kết nối với cộng đồng AWS Việt Nam
+- Chia sẻ kinh nghiệm thực tế từ các AWS practitioners
 
 ### Các Điểm Nổi Bật Trong Chương Trình
 
-#### Bài Phát Biểu Khai Mạc
-Sự kiện bắt đầu với một phiên keynote truyền cảm hứng bao gồm:
-- Xu hướng áp dụng cloud và chuyển đổi số tại Việt Nam
-- Hạ tầng toàn cầu của AWS và cách nó hỗ trợ doanh nghiệp trên toàn thế giới
-- Câu chuyện thành công từ các doanh nghiệp Việt Nam đã chuyển đổi hoạt động của họ bằng AWS
-- Tương lai của cloud computing và các công nghệ mới nổi
+#### Khai Mạc & Tóm Tắt Keynote
+Sự kiện mở đầu với phần tóm tắt toàn diện về các thông báo và ra mắt quan trọng từ AWS re:Invent. Các diễn giả trình bày hướng đi chiến lược của AWS, bao gồm các chủ đề lớn như generative AI, phát triển cloud-native và hiện đại hóa doanh nghiệp.
 
-#### Track 1: Kiến Trúc Cloud-Native & Hiện Đại Hóa
-Track này tập trung vào xây dựng ứng dụng có khả năng mở rộng và khả năng phục hồi trên AWS:
-- **Thiết kế kiến trúc cloud-native**: Best practices để thiết kế ứng dụng tận dụng các dịch vụ được quản lý của AWS
-- **Microservices và serverless patterns**: Khi nào và cách sử dụng containers (ECS, EKS) so với serverless (Lambda, Fargate)
-- **Chiến lược hiện đại hóa ứng dụng**: Khung 7Rs (Rehost, Replatform, Refactor, Rearchitect, v.v.)
-- **Tối ưu chi phí**: Right-sizing tài nguyên, sử dụng Reserved Instances, và triển khai auto-scaling
+#### Phiên Deep-Dive: Hạ Tầng Dữ Liệu Thế Hệ Mới Cho GenAI
 
-#### Track 2: Bảo Mật & Quản Trị
-Đi sâu vào bảo mật môi trường AWS:
-- **Chiến lược multi-account**: Sử dụng AWS Organizations để tách biệt môi trường (dev, staging, prod)
-- **IAM best practices**: Truy cập least privilege, role-based access control, và permission boundaries
-- **Security monitoring**: Sử dụng AWS Security Hub, GuardDuty, và CloudTrail để giám sát liên tục
-- **Tuân thủ và quản trị**: Đáp ứng yêu cầu quy định và triển khai khung quản trị
+Điểm nhấn của phần buổi chiều là chuỗi phiên deep-dive tập trung vào hạ tầng dữ liệu thế hệ mới được xây dựng chuyên biệt cho các workload Generative AI:
 
-#### Track 3: Dữ Liệu & Phân Tích
-Xây dựng data lakes và giải pháp phân tích:
-- **Kiến trúc data lake**: Sử dụng Amazon S3 làm nền tảng cho data lakes
-- **ETL và xử lý dữ liệu**: AWS Glue cho ETL serverless, Amazon Athena cho truy vấn tương tác
-- **Data warehousing**: Amazon Redshift cho analytics workloads
-- **Real-time analytics**: Amazon Kinesis cho xử lý streaming data
-- **Trực quan hóa dữ liệu**: Xây dựng dashboards và báo cáo
+- **Vector Database trên S3:** Giải pháp biến Amazon S3 thành kho lưu trữ vector hiệu năng cao, giúp tối ưu đáng kể chi phí hạ tầng cho các ứng dụng RAG (Retrieval-Augmented Generation) quy mô lớn. Phiên này minh họa cách các tổ chức có thể tận dụng độ bền và hiệu quả chi phí của S3 đồng thời đạt được hiệu năng cần thiết cho tìm kiếm vector similarity ở quy mô lớn.
 
-#### Track 4: AI/ML trên AWS
-Triển khai AI/ML thực tế:
-- **Amazon SageMaker**: Quy trình ML end-to-end từ chuẩn bị dữ liệu đến triển khai model
-- **Amazon Bedrock**: Sử dụng foundation models cho ứng dụng generative AI
-- **Dịch vụ AI**: Các dịch vụ AI được xây dựng sẵn như Rekognition, Comprehend, và Translate
-- **MLOps**: Vận hành hóa các mô hình machine learning trong production
+- **Natural Query Language trong OpenSearch:** Phiên này trình bày cách Amazon OpenSearch Service đơn giản hóa việc truy xuất dữ liệu bằng cách cho phép người dùng truy vấn bằng ngôn ngữ tự nhiên, loại bỏ rào cản về cú pháp truy vấn phức tạp cho người dùng cuối. Khả năng này hạ thấp rào cản kỹ thuật cho việc khám phá dữ liệu và trao quyền cho người dùng kinh doanh rút ra insights mà không cần kiến thức truy vấn chuyên biệt.
 
-#### Nghiên Cứu Tình Huống Khách Hàng
-Một số công ty Việt Nam đã chia sẻ hành trình AWS của họ:
-- Các nền tảng thương mại điện tử đã mở rộng quy mô trong mùa cao điểm
-- Các công ty dịch vụ tài chính đã cải thiện bảo mật và tuân thủ
-- Các startup đã tăng tốc time-to-market bằng kiến trúc serverless
-- Các doanh nghiệp đã giảm chi phí trong khi cải thiện hiệu suất
+#### Các Track về Cloud, Security & Serverless
+Các phiên bổ sung bao gồm các phát triển mới nhất trên các lĩnh vực dịch vụ cốt lõi của AWS:
+- Best practices về kiến trúc cloud và chiến lược hiện đại hóa
+- Các đổi mới về bảo mật và khung tuân thủ
+- Các pattern serverless computing và năng lực dịch vụ mới
+- Cập nhật Data & Analytics từ re:Invent
 
 ### Kiến Thức Kỹ Thuật Quan Trọng
 
-#### Các Pattern Kiến Trúc
-- **Well-Architected Framework**: Hiểu năm trụ cột (Operational Excellence, Security, Reliability, Performance Efficiency, Cost Optimization)
-- **Kiến trúc đa tầng**: Web, application, và database tiers với sự tách biệt phù hợp
-- **High availability**: Thiết kế cho 99.99% uptime sử dụng nhiều Availability Zones
-- **Disaster recovery**: Chiến lược backup và lập kế hoạch disaster recovery
+#### Hạ Tầng GenAI
+- Hiểu cách Amazon S3 có thể đóng vai trò nền tảng hiệu quả về chi phí cho vector databases trong kiến trúc RAG
+- Tầm quan trọng của việc chọn đúng lớp lưu trữ để cân bằng giữa chi phí, hiệu năng và quy mô cho các workload AI
+- Cách vector search trên S3 cho phép các tổ chức xây dựng ứng dụng GenAI quy mô lớn mà không cần hạ tầng vector database chuyên dụng đắt đỏ
 
-#### Security Best Practices
-- **Defense in depth**: Cách tiếp cận bảo mật phân lớp sử dụng nhiều dịch vụ bảo mật AWS
-- **Network security**: Thiết kế VPC, security groups, NACLs, và AWS WAF
-- **Mã hóa dữ liệu**: Mã hóa at rest và in transit sử dụng AWS KMS
-- **Quản lý danh tính**: SSO, MFA, và chiến lược credential rotation
+#### Truy Vấn Ngôn Ngữ Tự Nhiên
+- Natural Query Language của Amazon OpenSearch thu hẹp khoảng cách giữa người dùng kỹ thuật và phi kỹ thuật
+- Đơn giản hóa truy cập dữ liệu thông qua ngôn ngữ tự nhiên có thể đẩy nhanh quá trình ra quyết định trong tổ chức
+- Sự hội tụ giữa tìm kiếm và AI cho phép các pattern khám phá dữ liệu trực quan hơn
 
-#### Insights Dữ Liệu & Phân Tích
-- **Data lake vs data warehouse**: Khi nào sử dụng mỗi cách tiếp cận
-- **Schema-on-read**: Lợi ích của việc lưu trữ dữ liệu ở định dạng thô và áp dụng schema khi truy vấn
-- **Phân tích hiệu quả về chi phí**: Sử dụng đúng dịch vụ cho đúng workload (Athena cho truy vấn ad-hoc, Redshift cho phân tích phức tạp)
-- **Quản trị dữ liệu**: Triển khai chất lượng dữ liệu, cataloging, và access controls
-
-#### Kiến Thức Thực Tế AI/ML
-- **Managed vs custom models**: Khi nào sử dụng dịch vụ AI được xây dựng sẵn so với xây dựng custom models
-- **Model training**: Sử dụng SageMaker cho distributed training và hyperparameter tuning
-- **Model deployment**: Các pattern inference real-time và batch
-- **Tối ưu chi phí**: Sử dụng Spot Instances cho training và right-sizing inference endpoints
+#### Xu Hướng Cloud & Kiến Trúc
+- AWS tiếp tục đầu tư mạnh mẽ vào việc làm cho GenAI trở nên dễ tiếp cận thông qua các dịch vụ được quản lý như Amazon Bedrock
+- Kiến trúc serverless-first đang trở thành khuyến nghị mặc định cho các workload mới
+- AI đa modal và foundation models đang định hình lại cách các nhà phát triển xây dựng ứng dụng thông minh
 
 ### Bài Học Cá Nhân
 
 #### Phát Triển Kỹ Thuật
-- Tôi có được hiểu biết toàn diện về cách các dịch vụ AWS khác nhau hoạt động cùng nhau trong các tình huống thực tế, không chỉ riêng lẻ
-- Sự kiện giúp tôi kết nối kiến thức lý thuyết từ thực tập với ứng dụng kinh doanh thực tế
-- Tôi học được về các pattern kiến trúc và best practices mà tôi có thể áp dụng cho các dự án tương lai
+- Tôi có được những insights thực tế về cách hạ tầng dữ liệu thế hệ mới đang được thiết kế chuyên biệt cho các use case GenAI, đặc biệt là cách tiếp cận sáng tạo sử dụng S3 làm vector store
+- Các phiên deep-dive giúp tôi hiểu các đánh đổi thực tế giữa các cách tiếp cận kiến trúc khác nhau cho ứng dụng RAG
+- Tôi học được về các pattern mới nổi trong giao diện ngôn ngữ tự nhiên đang làm cho các dịch vụ cloud trở nên dễ tiếp cận hơn
 
 #### Insights Ngành
-- Hiểu cách các công ty Việt Nam đang áp dụng công nghệ cloud và những thách thức họ phải đối mặt
-- Tìm hiểu về hệ sinh thái cloud tại Việt Nam, bao gồm các đối tác AWS và nhà cung cấp dịch vụ
-- Có được insights về con đường sự nghiệp trong cloud computing, từ solutions architect đến DevOps engineer đến data engineer
+- Cộng đồng công nghệ Việt Nam đang tích cực áp dụng công nghệ GenAI và xây dựng ứng dụng production-grade trên AWS
+- Có sự quan tâm mạnh mẽ đến hạ tầng AI tối ưu chi phí, đặc biệt cho các startup và công ty đang phát triển
+- Hệ sinh thái cloud tại Việt Nam đang trưởng thành nhanh chóng, với nhiều practitioners chia sẻ kinh nghiệm production hơn
 
 #### Networking & Cộng Đồng
-- Kết nối với các chuyên gia AWS, solution architects, và các chuyên gia khác trong lĩnh vực cloud
-- Thảo luận về các thách thức kỹ thuật và giải pháp với các đồng nghiệp đang làm việc trên các dự án tương tự
-- Xây dựng các mối quan hệ có thể có giá trị cho hợp tác và học tập trong tương lai
+- Kết nối với các chuyên gia AWS, solution architects và các đồng nghiệp cloud practitioners trong cộng đồng Việt Nam
+- Thảo luận về các thách thức và cách tiếp cận kỹ thuật với các đồng nghiệp đang làm việc trên các dự án AI/ML và cloud tương tự
+- Sự kiện củng cố giá trị của việc là một phần của cộng đồng kỹ thuật năng động cho việc học tập liên tục
 
 #### Ứng Dụng Thực Tế
-- Tôi có thể thiết kế kiến trúc tốt hơn tuân theo AWS best practices
-- Tôi hiểu cách cân bằng chi phí, hiệu suất và bảo mật trong các tình huống thực tế
-- Tôi có bức tranh rõ ràng hơn về dịch vụ AWS nào sử dụng cho các use case khác nhau
+- Kiến thức về vector databases trên S3 trực tiếp áp dụng được cho công việc của tôi với các hệ thống dựa trên RAG
+- Các khái niệm truy vấn ngôn ngữ tự nhiên có thể được áp dụng để cải thiện trải nghiệm người dùng trong các ứng dụng data-driven
+- Các pattern kiến trúc được chia sẻ tại sự kiện cung cấp tham chiếu vững chắc cho việc thiết kế các giải pháp cloud có khả năng mở rộng và hiệu quả về chi phí
 
 ### Trải Nghiệm Sự Kiện
 
-Tham dự AWS Cloud Day Vietnam là một trải nghiệm phong phú cung cấp cả chiều sâu kỹ thuật và insights chiến lược. Sự kết hợp giữa các phiên do chuyên gia dẫn dắt, câu chuyện khách hàng thực tế, và các demo thực hành đã cho tôi cái nhìn toàn diện về cách AWS đang chuyển đổi doanh nghiệp tại Việt Nam.
+Tham dự AWS re:Invent re:Cap Vietnam tại TP. Hồ Chí Minh là một trải nghiệm rất có giá trị. Khác với một hội nghị thông thường, sự kiện này tập trung chuyên biệt vào việc chắt lọc những thông báo quan trọng nhất từ AWS re:Invent thành các insights có thể hành động cho cộng đồng địa phương. Các phiên deep-dive về hạ tầng GenAI — đặc biệt là Vector Database trên S3 và Natural Query Language trong OpenSearch — là những khoảnh khắc nổi bật cung cấp cả tầm nhìn chiến lược và kiến thức triển khai thực tế.
 
-Sự kiện củng cố sự quan tâm của tôi về cloud computing và AI/ML, và cho tôi tự tin rằng các kỹ năng tôi đang phát triển trong thời gian thực tập phù hợp với nhu cầu ngành. Cơ hội networking đặc biệt có giá trị, vì tôi có thể học hỏi từ các chuyên gia có kinh nghiệm và hiểu các quan điểm khác nhau về việc áp dụng cloud.
+Sự kiện củng cố niềm đam mê của tôi về cloud computing và AI/ML, đồng thời cho thấy bức tranh công nghệ đang phát triển nhanh chóng như thế nào. Sự kết hợp giữa các phiên kỹ thuật chuyên sâu do chuyên gia dẫn dắt và networking cộng đồng đã cho tôi góc nhìn toàn diện về hướng đi của AWS và hệ sinh thái cloud rộng lớn hơn, cũng như cách tôi có thể áp dụng những insights này vào các dự án và phát triển nghề nghiệp của mình.
 
 ### Ảnh Sự Kiện
 
-![Enter image alt description](/images/4-Event/event1_img1.jpg)
-![Enter image alt description](/images/4-Event/event1_img2.jpeg)
+![AWS re:Invent re:Cap HCMC 2025 - Phiên chia sẻ](/images/4-Event/event1_img.jpg)

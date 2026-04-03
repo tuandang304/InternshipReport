@@ -11,23 +11,23 @@ chapter: false
 
 ### Student Information:
 
-&emsp; **Full Name:** Do Trung Quan
+&emsp; **Full Name:** Dang Thanh Tuan
 
-&emsp; **Phone Number:** 0333224599
+&emsp; **Phone Number:** 0944982237
 
-&emsp; **Email:** dotrungquannt@gmail.com
+&emsp; **Email:** trumsc271@gmail.com
 
 &emsp; **University:** FPT University Ho Chi Minh
 
 &emsp; **Major:** Artificial Intelligence
 
-&emsp; **Internship Company:** Amazon Web Services Vietnam Co., Ltd.
+&emsp; **Internship Company:** Bootcamp - First Cloud AI Journey @ AWS Study Group
 
 &emsp; **Internship Position:** FCJ Cloud Intern
 
-&emsp; **Internship Duration:** From 08/09/2025 to 09/12/2025
+&emsp; **Internship Duration:** From 05/01/2026 to 18/04/2026
 
-![Your profile picture](/images/avatar1.jpg)
+<img src="/images/avatar.jpg" style="width: 50%; max-width: 300px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" />
 
 ### Report Content
 

@@ -9,23 +9,23 @@ chapter: false
 
 ### Thông tin sinh viên:
 
-&emsp; **Họ và tên:** Đỗ Trung Quân 
+&emsp; **Họ và tên:** Đặng Thành Tuấn
 
-&emsp; **Số điện thoại:** 0333224599
+&emsp; **Số điện thoại:** 0944982237
 
-&emsp; **Email:** dotrungquannt@gmail.com
+&emsp; **Email:** trumsc271@gmail.com
 
 &emsp; **Trường:** Đại học FPT TP.HCM
 
 &emsp; **Ngành:** Trí Tuệ Nhân Tạo
 
-&emsp; **Công ty thực tập:** Công ty TNHH Amazon Web Services Vietnam
+&emsp; **Công ty thực tập:** Bootcamp - First Cloud AI Journey @ AWS Study Group
 
 &emsp; **Vị trí thực tập:** FCJ Cloud Intern
 
-&emsp; **Thời gian thực tập:** Từ ngày 08/09/2025 đến ngày 09/12/2025
+&emsp; **Thời gian thực tập:** Từ ngày 05/01/2026 đến ngày 18/04/2026
 
-![Ảnh đại diện của bạn](/images/avatar1.jpg)
+<img src="/images/avatar.jpg" style="width: 50%; max-width: 300px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" />
 
 ### Nội dung báo cáo
 
