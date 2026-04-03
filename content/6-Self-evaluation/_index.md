@@ -7,7 +7,7 @@ pre: " <b> 6. </b> "
 ---
 
 During my internship at **AWS First Cloud Journey (FCJ)** from **January 4, 2026** to **April 5, 2026**, I had the opportunity to learn, practice, and apply my knowledge in a real-world working environment.  
-I participated in the **MapVibe project** - an AI-powered location discovery platform, through which I improved my skills in **cloud infrastructure, DevOps practices, software development, and AWS services**.
+I participated in the **Slothub project** - an AI-powered location discovery platform, through which I improved my skills in **cloud infrastructure, DevOps practices, software development, and AWS services**.
 
 As an extroverted person who enjoys communication, I always strived to complete tasks well, complied with workplace regulations, and actively engaged with colleagues and mentors to improve work efficiency. I maintained a strong sense of responsibility and consistently delivered quality work on time.
 
@@ -30,7 +30,7 @@ To objectively reflect on my internship period, I would like to evaluate myself 
 
 ### Strengths
 
-- **Strong foundation in AI/ML and Data**: My background in artificial intelligence, machine learning, and data analysis provided a solid base for understanding the AI components of the MapVibe project, particularly AWS Bedrock integration and data processing workflows.
+- **Strong foundation in AI/ML and Data**: My background in artificial intelligence, machine learning, and data analysis provided a solid base for understanding the AI components of the Slothub project, particularly AWS Bedrock integration and data processing workflows.
 
 - **Excellent communication skills**: Being extroverted and enjoying interaction, I effectively communicated with team members, asked questions when needed, and actively participated in discussions and meetings.
 
@@ -44,7 +44,7 @@ To objectively reflect on my internship period, I would like to evaluate myself 
 
 - **Cloud and DevOps expertise**: While I have a good foundation in AI/ML and data, I need to deepen my knowledge and hands-on experience in cloud infrastructure, DevOps practices, and AWS services. This internship was an excellent opportunity to start building these skills.
 
-- **Software development experience**: I recognize the need to improve my practical software development skills, including best practices, code quality, testing, and software architecture patterns. The MapVibe project helped me gain initial experience in this area.
+- **Software development experience**: I recognize the need to improve my practical software development skills, including best practices, code quality, testing, and software architecture patterns. The Slothub project helped me gain initial experience in this area.
 
 - **Problem-solving in new domains**: When encountering problems in unfamiliar areas like cloud infrastructure or software development, I sometimes need more time to analyze and propose solutions. I will continue to develop my problem-solving skills through practice and learning.
 

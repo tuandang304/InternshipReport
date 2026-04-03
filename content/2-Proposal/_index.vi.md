@@ -1,213 +1,155 @@
 ---
 title: "Proposal"
-date: "2025-10-22"
+date: "2026-04-03"
 weight: 2
 chapter: false
 pre: " <b> 2. </b> "
 ---
 
-# AntEdu - Nền tảng Học tập & Quản lý Thông minh với AI
+# SLOTHUB — Nền tảng hỗ trợ học tập và giảng dạy cho giáo viên và học sinh
+*(Quản lý lớp học, bài tập, lịch học, tài liệu và trợ lý AI tích hợp Amazon Bedrock)*
 
 ---
 
 ## 1. Tóm tắt chung
 
-Chúng tôi là một nhóm gồm 5 sinh viên Công nghệ Thông tin đang thực tập, cùng nhau phát triển một dự án mang tên **EduCare**. EduCare là một nền tảng học trực tuyến sáng tạo nhắm đến thị trường Việt Nam, tích hợp **AI đa tầng** để mang đến trải nghiệm giáo dục cá nhân hóa sâu sắc và thông minh. Nền tảng kết hợp các tính năng quản lý học tập truyền thống với các khả năng AI tiên tiến — từ tự động sinh nội dung giáo dục đến trợ lý AI hội thoại.
+**Slothub** là một hệ thống web hướng tới giáo viên, học sinh và quản trị viên, nhằm đồng bộ hoạt động dạy–học trên một nền tảng duy nhất: từ quản lý lớp, thời khóa biểu, điểm danh, giao và chấm bài, đến tài liệu, thông báo và **trợ lý học tập thông minh** (gợi ý lộ trình ôn tập, trắc nghiệm, trả lời theo kiến thức trong cơ sở dữ liệu giáo trình). Dự án được triển khai theo hướng **đám mây AWS** tại khu vực **ap-southeast-1 (Singapore)** với thiết kế **đa vùng sẵn sàng (Multi-AZ)** nhằm tăng tính sẵn sàng và khả năng phục hồi.
 
-Mục tiêu của dự án là cách mạng hóa cách sinh viên học trực tuyến bằng cách cung cấp các công cụ AI tự thích ứng theo nhu cầu của từng người học. Hệ thống được xây dựng trên **kiến trúc microservice** gồm 4 dịch vụ độc lập: frontend React, backend API Spring Boot, dịch vụ AI dựa trên FastAPI, và lõi trợ lý AI agentic được vận hành bởi **AWS Bedrock**. Kiến trúc này đảm bảo khả năng mở rộng, dễ bảo trì, và có thể phát triển từng thành phần một cách độc lập.
+**Frontend** được xây dựng bằng **React, TypeScript và Vite**, giao diện responsive, hỗ trợ đa ngôn ngữ (vi/en). **Backend** dùng **Java Spring Boot** (REST API, bảo mật OAuth2/JWT), kết nối **Amazon RDS for PostgreSQL** cho dữ liệu quan hệ (người dùng, lớp, bài giao, bài nộp, thời khóa biểu, điểm danh, phiên chat…). **Dịch vụ AI** gồm một **API FastAPI** (Python) xử lý sinh đề, lộ trình, trích xuất tài liệu, tích hợp **Amazon S3** cho tệp tài liệu; và **Amazon Bedrock AgentCore** triển khai agent **gia sư AI (Slozy)** với các công cụ tìm kiếm lý thuyết (vector trên PostgreSQL), gợi ý lộ trình và quiz — phù hợp với kiến trúc “Fargate Backend + Fargate AI” và **Amazon Bedrock** trong sơ đồ hệ thống.
 
-Các tính năng cốt lõi của EduCare bao gồm: sinh nội dung giáo dục bằng AI (tài liệu, bài tập, lộ trình học) từ tài liệu PDF được tải lên, hệ thống quản lý lớp học toàn diện (giao bài, nộp bài, chấm điểm, điểm danh), và **Slozy** — trợ lý AI thông minh được xây dựng trên kiến trúc **LangGraph ReAct Agent** có khả năng tìm kiếm cơ sở dữ liệu lý thuyết qua RAG, gợi ý lộ trình học cá nhân hóa, và đề xuất bài kiểm tra thông qua hội thoại tự nhiên.
-
-Để đạt được mục tiêu này, nhóm chúng tôi chịu trách nhiệm toàn bộ vòng đời phát triển: từ thiết kế hệ thống, phát triển full-stack, tích hợp AI sử dụng **OpenAI API** và **AWS Bedrock AgentCore**, đến triển khai hạ tầng với **Docker Compose** và **AWS S3** cho lưu trữ file.
+Mục tiêu là giảm thiểu gánh nặng quản trị hành chính cho giáo viên, giúp học sinh chủ động ôn tập có định hướng, đồng thời tận dụng các dịch vụ AWS (Cognito, WAF, Amplify, ALB, Fargate, ECR, RDS, S3, Bedrock, CloudWatch, GuardDuty…) để triển khai và vận hành có kiểm soát.
 
 ---
 
-## 2. Phát biểu Vấn đề
+## 2. Phát biểu vấn đề
 
 ### Vấn đề là gì?
 
-- Các nền tảng học trực tuyến truyền thống áp dụng phương pháp **đồng nhất cho tất cả**, thiếu khả năng thích ứng nội dung và lộ trình học theo nhu cầu cá nhân, tốc độ học, và lỗ hổng kiến thức của từng sinh viên.
-- Giáo viên mất quá nhiều thời gian cho các tác vụ lặp đi lặp lại như **tạo bài tập thủ công, biên soạn tài liệu học tập, và xây dựng lộ trình học** từ các tài liệu có sẵn, làm giảm khả năng tập trung vào việc giảng dạy và hướng dẫn thực tế.
-- Các giải pháp e-learning hiện tại thiếu **giao diện trò chuyện thông minh** có khả năng hiểu câu hỏi của sinh viên trong ngữ cảnh, truy xuất lý thuyết liên quan, và cung cấp hướng dẫn cá nhân hóa — buộc sinh viên phải tự tìm đường qua các nội dung tĩnh.
-- Sự thiếu kết nối giữa **quản lý nội dung, đánh giá, và học tập hỗ trợ bởi AI** trên nhiều công cụ khác nhau tạo ra trải nghiệm phân mảnh cho cả giáo viên và người học.
+- **Công cụ rời rạc**: Giáo viên thường phải dùng nhiều công cụ rời (bảng điểm, nhóm chat, file tài liệu, form bài tập), dễ mất thời gian và thiếu nhất quán dữ liệu.
+- **Thiếu tính cá nhân hóa**: Học sinh khó theo dõi tiến độ, lịch học và bài tập; thiếu phản hồi cá nhân hóa kịp thời ngoài giờ lên lớp.
+- **AI chưa được kiểm soát**: Các nền tảng học tập truyền thống ít tích hợp **AI an toàn** trong ngữ cảnh giáo dục (hướng dẫn từng bước, không hallucination).
+- **Yêu cầu vận hành**: Đòi hỏi hệ thống có tính **bảo mật, mở rộng và khả dụng cao** khi triển khai thực tế.
 
 ### Giải pháp
 
-EduCare sử dụng kiến trúc AI đa tầng để giải quyết những thách thức này:
-
-- **Dịch vụ Sinh Nội dung AI (FastAPI + OpenAI)**: Tự động sinh bài tập, tài liệu học tập, và lộ trình học có cấu trúc từ tài liệu PDF được tải lên. Giáo viên chỉ cần tải lên tài liệu khóa học, và AI sẽ tạo ra nội dung giáo dục sẵn sàng sử dụng, được lưu trữ và phân phối qua **AWS S3**.
-- **Trợ lý AI Slozy (LangGraph + AWS Bedrock AgentCore)**: Trợ lý AI hội thoại được xây dựng trên kiến trúc **ReAct Agent** với 3 công cụ tích hợp — `search_theory_database` (truy xuất lý thuyết dựa trên RAG qua pgvector), `suggest_roadmap` (sinh lộ trình học cá nhân hóa), và `suggest_quiz` (đề xuất bài kiểm tra thích ứng). Slozy trả về các widget UI đặc biệt mà frontend render thành các thành phần tương tác.
-- **Quản lý Học tập Toàn diện (Spring Boot)**: Quản lý toàn bộ vòng đời lớp học bao gồm tạo lớp, phân phối bài tập, xử lý nộp bài, chấm điểm, điểm danh, và tổ chức nội dung phân cấp (Sách → Chương → Mục → Tiểu mục → Bài học).
-- **Nền tảng Thống nhất (React + TypeScript)**: Một giao diện responsive duy nhất tích hợp mượt mà tất cả các dịch vụ, mang đến trải nghiệm liền mạch cho cả giáo viên và sinh viên.
+Slothub tập trung dữ liệu và quy trình trên một stack thống nhất: API Spring Boot + PostgreSQL RDS; dịch vụ AI tách riêng (container) gọi mô hình **Amazon Bedrock** và lưu trữ tài liệu trên **S3**; trợ lý gia sư **AgentCore** truy vấn nội dung lý thuyết từ cơ sở dữ liệu (RAG - tìm kiếm vector) thay vì “bịa” kiến thức. Người dùng xác thực qua **Amazon Cognito**; truy cập qua **WAF**, **AWS Amplify** (hosting frontend) và **ALB** phân phối tới **AWS Fargate**; cơ sở dữ liệu **RDS PostgreSQL** chạy chế độ **Multi-AZ**.
 
 ### Lợi ích và ROI
 
-- **Năng suất Giáo viên**: Giảm đáng kể thời gian tạo nội dung bằng cách tự động hóa việc sinh bài tập và lộ trình từ tài liệu có sẵn.
-- **Học tập Cá nhân hóa**: Trợ lý AI thích ứng theo trình độ của từng sinh viên, cung cấp hướng dẫn theo ngữ cảnh thông qua hội thoại tự nhiên.
-- **Quản lý Toàn diện**: Hỗ trợ toàn bộ vòng đời lớp học, loại bỏ nhu cầu sử dụng nhiều công cụ rời rạc.
-- **Khả năng Mở rộng**: Kiến trúc microservice cho phép mở rộng độc lập từng thành phần theo yêu cầu.
-- **Tương tác Thông minh**: Truy xuất kiến thức dựa trên RAG đảm bảo phản hồi chính xác, phù hợp với chương trình giảng dạy từ trợ lý AI.
-- **Hiệu quả Chi phí**: Tận dụng Docker Compose cho phát triển local và các dịch vụ AWS cho production giúp quản lý chi phí hạ tầng hợp lý.
+- **Tập trung**: Đồng nhất lộ trình học tập, quản lý lớp, thời khóa biểu và bài tập.
+- **Cá nhân hóa**: Lộ trình ôn tập, quiz và chat gia sư hỗ trợ theo từng môn/ngữ cảnh.
+- **Tin cậy vận hành**: Multi-AZ cho RDS, Fargate trải trên nhiều AZ, giám sát **CloudWatch**, bảo mật **GuardDuty**.
+- **Khả năng mở rộng**: Container hóa, dễ dàng mở rộng độc lập giữa dịch vụ AI và backend.
+- **Kiểm soát chi phí**: Tối ưu theo tần suất sử dụng (Fargate, Bedrock) và caching.
 
 ---
 
-## 3. Kiến trúc Giải pháp
+## 3. Kiến trúc giải pháp
 
 ### Tổng quan
 
-Gợi ý Người dùng + Ngữ cảnh → **Mô hình Titan Embedding của Bedrock** → **Truy vấn có Cấu trúc** → **Tìm kiếm RDS (PostgreSQL)** → **Xếp hạng & Bộ nhớ đệm** → **Hiển thị Web UI** → **Vòng lặp Phản hồi Người dùng**.  
-![Solution Architecture](/images/2-Proposal/4N1D-Architechture.drawio.png)
+Luồng chính: **Người dùng → Cognito (xác thực) → ALB → Fargate (Backend hoặc AI)**; dữ liệu lưu tại **RDS PostgreSQL (Multi-AZ)** và tệp tại **S3 (documents bucket)**; dịch vụ AI tương tác **Amazon Bedrock (AgentCore)**.
+
+![Kiến trúc giải pháp Slothub](/images/2-Proposal/Achitecture-Page-1.drawio.svg)
 
 ### Dịch vụ AWS được sử dụng
 
-| Service                   | Function                              |
-|---------------------------|---------------------------------------|
-| Amazon Route 53           | Định tuyến tên miền                   |
-| AWS Certificate Manager   | Chứng chỉ SSL/TLS                     |
-| AWS WAF                   | Tường lửa ứng dụng web                |
-| Amazon CloudFront         | CDN toàn cầu cho tài sản tĩnh         |
-| Amazon API Gateway        | Điểm cuối API RESTful an toàn         |
-| AWS Lambda                | Logic phân tích ý định, tìm kiếm và xếp hạng |
-| Amazon RDS (PostgreSQL)   | Dữ liệu địa điểm được lập chỉ mục địa lý và bộ nhớ đệm truy vấn |
-| Amazon S3                 | Lưu trữ ảnh, nhật ký và tài sản       |
-| Amazon Cognito            | Xác thực và ủy quyền người dùng       |
-| Amazon Bedrock            | Mô hình Titan embedding và mô hình LLM Claude để phân tích ý định và tóm tắt    |
-| Amazon Rekognition        | Kiểm duyệt nội dung driven by AI cho các tải lên của người dùng |
-| Amazon Textract           | Trích xuất văn bản từ hình ảnh và tài liệu (menu, biển hiệu, v.v.) |
-| Amazon EventBridge        | Phân tích theo lịch và cập nhật huy hiệu |
-| Amazon CloudWatch         | Giám sát và ghi nhật ký               |
-
-### Thiết kế Thành phần
-
-- **Frontend**: Ứng dụng web responsive (Next.js, song ngữ VI/EN, UI tìm kiếm kết hợp).
-- **Tiếp nhận Dữ liệu**: Gợi ý và ngữ cảnh được xử lý qua API Gateway; các tải lên của người dùng (đánh giá, ảnh) được kiểm duyệt bởi AI của Rekognition.
-- **Lưu trữ Dữ liệu**: RDS (PostgreSQL) cho dữ liệu địa điểm với thiết kế cơ sở dữ liệu quan hệ (ERD), các tính năng hỗ trợ vector và lập chỉ mục để tối ưu hóa tốc độ truy vấn; S3 cho ảnh và nhật ký.
-- **Xử lý Dữ liệu**: Microservices Lambda xử lý các cuộc gọi Bedrock (mô hình Titan embedding và mô hình LLM Claude), thực thi truy vấn và xếp hạng kết quả.
-- **Quản lý Người dùng**: Cognito cho xác thực dựa trên JWT (đăng nhập email/mạng xã hội); người dùng khách truy cập các tính năng hạn chế.
-- **Đầu ra**: Hiển thị thẻ địa điểm với tóm tắt được tạo bởi AI, đánh giá, ảnh và CTA (ví dụ: Chỉ đường, Gọi).
+| Dịch vụ | Vai trò |
+|--------|---------|
+| **Amazon Cognito** | Xác thực và phân quyền người dùng |
+| **Amazon Route 53** | DNS và định tuyến tên miền |
+| **AWS WAF** | Bảo vệ ứng dụng web khỏi các khai thác phổ biến |
+| **AWS Amplify** | Hosting và quản lý frontend |
+| **AWS Certificate Manager** | Quản lý chứng chỉ SSL/TLS |
+| **Amazon VPC + IGW** | Mạng riêng, kết nối internet có kiểm soát |
+| **Application Load Balancer** | Cân bằng tải tới các dịch vụ container |
+| **Amazon ECS on Fargate** | Chạy Spring Boot và FastAPI không quản lý server |
+| **Amazon ECR** | Lưu trữ Docker image cho backend và AI |
+| **Amazon RDS (PostgreSQL)** | Cơ sở dữ liệu quan hệ Multi-AZ (Primary/Standby) |
+| **Amazon S3** | Lưu trữ tài liệu khóa học và tệp đính kèm |
+| **Amazon Bedrock (AgentCore)** | Triển khai Agent gia sư AI (Slozy) và LLM |
+| **Amazon CloudWatch** | Ghi log và giám sát tài nguyên |
+| **Amazon GuardDuty** | Phát hiện mối đe dọa bảo mật thông minh |
 
 ---
 
-## 4. Triển khai Kỹ thuật
+## 4. Triển khai kỹ thuật
 
-### Các giai đoạn Triển khai
+### Các giai đoạn triển khai
 
-| Phase | Description                                          | Duration   |
-|-------|------------------------------------------------------|------------|
-| 1     | Xác định kiến trúc, schema Titan embedding của Bedrock và schema RDS (PostgreSQL) với thiết kế ERD | 2 tuần |
-| 2     | Ước tính chi phí và tối ưu hóa chiến lược bộ nhớ đệm  | 1 tuần |
-| 3     | Xây dựng backend (Lambda, RDS PostgreSQL, Bedrock Titan embedding, Rekognition)| 3 tuần |
-| 4     | Phát triển frontend (Next.js, song ngữ, UI responsive)  | 3 tuần |
-| 5     | Kiểm tra và tối ưu hóa cho độ trễ <10s và khả năng mở rộng | 2 tuần |
-| 6     | Ra mắt MVP, triển khai qua CI/CD (Terraform, GitLab), thu thập phản hồi    | 2 tuần |
+| Giai đoạn | Nội dung | Thời gian gợi ý |
+|-----------|----------|------------------|
+| 1 | Chuẩn hóa kiến trúc AWS (VPC, ALB, Fargate, ECR, RDS Multi-AZ, Cognito, S3), IaC/CI cơ bản | 2–3 tuần |
+| 2 | Hoàn thiện schema RDS, phát triển API Spring Boot và tích hợp Cognito | 3–4 tuần |
+| 3 | Triển khai dịch vụ AI (FastAPI), pipeline S3, kết nối Bedrock | 2–3 tuần |
+| 4 | Triển khai AgentCore (Slozy), nối công cụ tới PostgreSQL và API AI | 2 tuần |
+| 5 | Build production frontend, triển khai Amplify, WAF, Route 53 | 2 tuần |
+| 6 | Kiểm thử tải, giám sát CloudWatch, tinh chỉnh chi phí và bảo mật | 1–2 tuần |
 
-### Yêu cầu Kỹ thuật
+### Yêu cầu kỹ thuật
 
-- **Thiết bị Edge**: Trình duyệt hiện đại (Chrome, Safari, Firefox) với UI responsive sẵn sàng PWA.
-- **Cloud**: AWS Route 53, ACM, WAF, CloudFront, API Gateway, Lambda, RDS (PostgreSQL với hỗ trợ vector), S3, Cognito, Bedrock (Titan embedding, Claude LLM), Rekognition, Textract, EventBridge, CloudWatch.
-- **Công cụ & Framework**: Next.js (App Router), TypeScript, Terraform cho infrastructure-as-code, GitLab cho CI/CD.
-
----
-
-## 5. Lịch trình & Cột mốc
-
-| Period              | Activities                                                  |
-|---------------------|-------------------------------------------------------------|
-| Trước khi Phát triển (Tháng 0 - 9/2025) | Nghiên cứu các bộ dữ liệu địa điểm tại Thành phố Hồ Chí Minh cho RDS (PostgreSQL) |
-| Tháng 1 (10/2025) | Xây dựng backend MVP với mô hình Titan embedding của Bedrock và RDS (PostgreSQL)            |
-| Tháng 2 (11/2025)  | Triển khai bộ nhớ đệm, phát triển tích hợp frontend            |
-| Tháng 3 (11/2025)  | Ra mắt beta công khai, tối ưu hóa hiệu suất, thu thập phản hồi  |
-| Sau khi Ra mắt (12/2025) | Thêm các tính năng nâng cao (ví dụ: xếp hạng dựa trên ML, chế độ ngoại tuyến)|
+- **Phía máy khách**: Trình duyệt hiện đại; giao diện responsive.
+- **Backend**: Java 17, Spring Boot 3.x, PostgreSQL, Spring Security.
+- **AI & Agent**: Python 3.x, FastAPI, Bedrock AgentCore SDK, LangGraph.
+- **CI/CD**: GitHub Actions build Docker image, push ECR, cập nhật ECS Fargate.
 
 ---
 
-## 6. Ước tính Ngân sách
+## 5. Lịch trình và cột mốc
 
-### Ước tính Thời gian Đầu tư theo Giai đoạn
-
-Chúng tôi ước tính mỗi thành viên sẽ đóng góp khoảng 20 giờ mỗi tuần cho dự án. Với mỗi giai đoạn kéo dài 2 tuần, tổng thời gian đầu tư được ước tính như sau:
-
-| Giai đoạn dự án | Tổng số giờ ước tính |
-|:--:|:--:|
-| Giai đoạn 1: Thiết lập nền tảng | 200 giờ (5 người * 20 giờ/tuần * 2 tuần) |
-| Giai đoạn 2: Xây dựng tính năng lõi | 200 giờ (5 người * 20 giờ/tuần * 2 tuần) |
-| Giai đoạn 3: Hoàn thiện và Triển khai | 200 giờ (5 người * 20 giờ/tuần * 2 tuần) |
-| **Tổng số giờ** | **600 giờ** |
-| **Tổng chi phí tài chính** | **$0** |
-
-### Phân bố Đóng góp cho Dự án
-
-Chi phí tài chính trực tiếp của dự án là không đáng kể và được trang trải hoàn toàn bởi các khoản tín dụng. Sự đóng góp chính đến từ thời gian của đội ngũ và sự hỗ trợ từ AWS.
-
-| Bên tham gia | Đóng góp | % Đóng góp (Tổng giá trị) |
-|:--|:--|:--|
-| Khách hàng (Chương trình thực tập) | - Cơ hội học tập và kinh nghiệm thực tế. | - |
-| Đối tác (Nhóm sinh viên) | - Thời gian và công sức (ước tính 600 giờ). | - |
-| AWS | - $200 tín dụng (credit). <br> - Các dịch vụ trong Gói Miễn phí (Free Tier). | 100% (chi phí tài chính) |
-
-### Biện pháp Tối ưu hóa Chi phí
-- **Sử dụng Free-Tier**: Tận dụng các miễn phí của AWS cho Lambda, RDS, S3, CloudFront, Rekognition và Cognito để giảm thiểu chi phí.
-- **Bộ nhớ đệm Aggressive cho Bedrock**: Đạt tỷ lệ truy cập bộ nhớ đệm cao để giảm chi phí token AI.
-- **Xử lý Batch Rekognition**: Các kiểm tra hình ảnh không theo thời gian thực để tiết kiệm chi phí.
-- **Sử dụng RDS Tối ưu**: Sử dụng PostgreSQL với lập chỉ mục phù hợp để giảm thiểu chi phí truy vấn.
-- **Bộ nhớ đệm Tài sản Tĩnh**: Tối thiểu hóa chi phí truyền dữ liệu đi ra thông qua CloudFront.
-
-### Kiểm soát Ngân sách
-- Toàn bộ dự án hoạt động trong phạm vi **$200 tín dụng từ AWS Free Tier**.
-- Tất cả chi phí cơ sở hạ tầng được trang trải bởi tín dụng AWS và các dịch vụ free tier.
-- Không có chi phí tài chính trực tiếp nào được phát sinh bởi nhóm.
+| Giai đoạn | Hoạt động |
+|-----------|-----------|
+| Chuẩn bị | Thống nhất ERD, API, quyền vai trò (giáo viên, học sinh, admin) |
+| Phát triển lõi | Lớp học, bài tập, lịch trực tuyến, điểm danh và quản lý người dùng |
+| Tích hợp AI | FastAPI + S3 + Bedrock; Triển khai Agent Slozy |
+| Triển khai | ECR, Fargate, ALB, Amplify, Cognito, WAF |
+| Vận hành | Giám sát hệ thống, backup RDS, xử lý sự cố |
 
 ---
 
-## 7. Đánh giá Rủi ro
+## 6. Ước tính ngân sách
 
-| Risk                            | Impact | Probability | Mitigation                              |
-|---------------------------------|--------|-------------|----------------------------------------|
-| Dữ liệu RDS không nhất quán      | High   | Medium      | Xác thực và sao lưu dữ liệu thường xuyên    |
-| Phân tích Titan embedding không chính xác (VN/EN)  | Medium | Low         | Mẫu gợi ý được xác định trước, xác thực |
-| Khả năng mở rộng dưới tải cao     | Medium | Medium      | Tự động mở rộng serverless, bộ nhớ đệm       |
-| Mối quan tâm về quyền riêng tư (dữ liệu vị trí)| High   | Low         | Sự đồng ý rõ ràng của người dùng, các truy vấn ẩn danh |
-| Vượt quá ngân sách               | High   | Medium      | Giám sát chặt chẽ, sử dụng free tiers, cảnh báo chi phí |
-| Phụ thuộc vào dịch vụ AWS Bedrock (Titan, Claude)  | High   | Low         | Cơ chế dự phòng thay thế, kết quả được bộ nhớ đệm |
-| Phụ thuộc vào nền tảng GitLab    | Medium | Low         | Sao lưu thường xuyên, tùy chọn repository thay thế |
-| Chất lượng dữ liệu ban đầu       | Medium | Medium      | Quy trình xác thực dữ liệu, tích hợp phản hồi người dùng |
+### Thời gian đầu tư (tham khảo)
 
-**Kế hoạch dự phòng**: Sử dụng kết quả RDS được bộ nhớ đệm hoặc dự phòng JSON cục bộ cho các demo. Triển khai giới hạn tốc độ dựa trên IP cho người dùng chưa xác thực. Giám sát chi phí AWS hàng tuần để ngăn chặn vượt quá ngân sách.
+Tổng giờ làm việc ước tính cho nhóm 5 thành viên (20 giờ/tuần) qua các giai đoạn là khoảng **600 giờ**.
+
+### Chi phí đám mây
+
+- **Tối ưu hóa**: Toàn bộ dự án được thiết kế để vận hành trong phạm vi ngân sách **$200 tín dụng từ AWS**.
+- **Hạng mục**: Chi phí chính nằm ở RDS Multi-AZ, Fargate tasks và token sử dụng cho Bedrock.
 
 ---
 
-## 8. Kết quả Dự kiến
+## 7. Đánh giá rủi ro
 
-### Tiêu chí Thành công Dự án
-
-Để đảm bảo dự án MapVibe thành công, chúng tôi đặt ra các tiêu chí thành công cụ thể, có thể đo lường được như sau:
-
-- **Hoàn thành triển khai hạ tầng**: Triển khai thành công và an toàn toàn bộ kiến trúc hệ thống lên AWS, bao gồm các dịch vụ đã định sẵn như VPC, Subnet, RDS, Lambda, S3, CloudFront, API Gateway, và Cognito.
-- **Tính năng tìm kiếm cốt lõi hoạt động hiệu quả**: Tính năng tìm kiếm bằng ngôn ngữ tự nhiên sử dụng AWS Bedrock (mô hình Titan embedding, mô hình LLM Claude) và RDS PostgreSQL phải có khả năng hiểu và trả về kết quả phù hợp, có ý nghĩa cho ít nhất **90%** các câu truy vấn thông thường từ người dùng.
-- **Tối ưu chi phí**: Toàn bộ chi phí sử dụng dịch vụ AWS trong suốt quá trình phát triển và triển khai ban đầu không vượt quá 200 đô la tín dụng từ gói AWS Free Tier.
-- **Ra mắt sản phẩm (MVP)**: Hoàn thiện và cho ra mắt phiên bản sản phẩm khả dụng tối thiểu (MVP) của website MapVibe cho nhóm người dùng mục tiêu (GenZ) trên cả **desktop và nền tảng iOS, Android**. Ngoài ra, còn có **trang tổng quan (Dashboard) dành cho quản trị viên** để quản lý nội dung và người dùng.
-- **Thu thập phản hồi tích cực**: Sau khi ra mắt, thu thập được ít nhất 50 đề xuất địa điểm mới từ người dùng trong tháng đầu tiên, cho thấy sự tương tác và hưởng ứng của cộng đồng.
-
-### Cải tiến Kỹ thuật
-- **Tìm kiếm Trò chuyện dựa trên Tâm trạng**: Hỗ trợ ngôn ngữ tự nhiên cho tiếng Việt và tiếng Anh với độ trễ <10s, powered by Bedrock (mô hình Titan embedding và mô hình LLM Claude), hiểu được cảm xúc và tâm trạng của người dùng.
-- **Tóm tắt AI**: Tổng quan địa điểm được tạo bởi Bedrock, làm mới mỗi 7 ngày hoặc sau 10 đánh giá mới.
-- **Khả năng mở rộng**: Kiến trúc serverless với phân phối CDN toàn cầu qua CloudFront.
-- **Kiểm duyệt**: AI của Rekognition đảm bảo nội dung do người dùng tạo an toàn (đánh giá, ảnh).
-- **Cơ sở dữ liệu Quan hệ**: PostgreSQL với lập chỉ mục được tối ưu hóa cho hiệu suất truy vấn nhanh.
-
-### Giá trị Dài hạn
-- **Cá nhân hóa**: Xếp hạng lại dựa trên ML và phân tích hành vi người dùng dựa trên tâm trạng và sở thích.
-- **Hỗ trợ Ngoại tuyến**: PWA để liệt kê các địa điểm ngoại tuyến.
-- **Khả năng mở rộng**: Tiềm năng tích hợp với các hệ thống đặt phòng nội bộ.
-- **Mở rộng Ngữ cảnh**: Đề xuất dựa trên thời tiết, sự kiện, xu hướng xã hội và cảm xúc người dùng.
+| Rủi ro | Mức độ ảnh hưởng | Khả năng | Giải pháp giảm thiểu |
+|--------|------------------|----------|------------|
+| Lỗi đồng bộ dữ liệu Backend-AI | Cao | Trung bình | Định nghĩa API contract chặt chẽ, xử lý giao dịch rõ ràng |
+| Chi phí Bedrock vượt dự kiến | Cao | Trung bình | Giới hạn quota, sử dụng bộ nhớ đệm (cache) |
+| Sự cố RDS (failover) | Cao | Thấp | Cấu hình Multi-AZ, backup tự động |
+| Bảo mật API/S3 | Cao | Trung bình | IAM least privilege, WAF, GuardDuty |
+| Chất lượng phản hồi AI | Trung bình | Trung bình | Prompt engineering, kiểm duyệt nội dung dựa trên tri thức curriculum |
 
 ---
 
-### Tài liệu đính kèm / Tham khảo
-- [AWS Pricing Calculator](https://calculator.aws/#/estimate?id=b574c31813807522d949cf5adca64b41612e12c7)
-- [GitLab Repository](https://gitlab.com/4n1d/mapvibe)
+## 8. Kết quả dự kiến
 
-## 9. QUAN TRỌNG: Proposal bản docs
-- [Proposal Docs Version](https://docs.google.com/document/d/1-wM11mgTNaL8gvbMjAmukW9ZKzqGtHMp/edit)
-- [Related Documents](https://drive.google.com/drive/u/0/folders/1cdBYgwzBA4Vl9ww_fCPXmbsKToTKgH4L)
+### Tiêu chí thành công
 
+- Triển khai **end-to-end** theo kiến trúc AWS hoàn chỉnh: Cognito, ALB, Fargate, RDS PostgreSQL Multi-AZ, S3, Bedrock AgentCore.
+- **MVP** cho phép: quản lý lớp, giao bài, nộp bài, lịch/điểm danh và ít nhất một tính năng AI (Slozy AI Tutor hoặc Roadmap/Quiz).
+- **An toàn**: Toàn bộ giao tiếp qua HTTPS, tích hợp WAF, log tập trung CloudWatch.
+- **Hiệu quả**: Hệ thống AI phản hồi chính xác (>90% câu hỏi lý thuyết curriculum) thông qua RAG.
+
+### Giá trị dài hạn
+
+- Khả năng mở rộng thành hệ thống đa trường (Multi-tenancy).
+- Chuyển đổi từ quản lý hành chính sang học thuật bổ trợ bởi trí tuệ nhân tạo.
+
+---
+
+## 9. Tài liệu tham khảo
+
+- [AWS Pricing Calculator](https://calculator.aws/)
+- Tài liệu Amazon Bedrock AgentCore và Amazon ECS Fargate.
+- Mã nguồn dự án: thư mục `frontend`, `backend`, `AI`, `agent-core`.

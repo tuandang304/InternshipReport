@@ -1,35 +1,35 @@
 ---
 title: "Workshop"
-date: 2025-09-09
+date: 2026-04-03
 weight: 5
 chapter: false
 pre: " <b> 5. </b> "
 ---
-# MapVibe - Building an AI-Powered Location Discovery Platform
+# Slothub — Building an AI-Powered Learning & Classroom Management Platform
 
 #### Overview
 
-**MapVibe** is a modern web application that helps users discover dining and activity locations using natural language queries powered by AWS AI services. Built with a monorepo architecture using TurboRepo and Bun, MapVibe leverages AWS serverless services to provide a scalable, cost-effective solution.
+**Slothub** is an innovative online learning platform integrating multi-layered AI to deliver a deeply personalized educational experience. Built with a microservice architecture, the project leverages modern development frameworks and AWS cloud services to provide a scalable, intelligent solution for both teachers and students.
 
 In this workshop, you will learn how to:
-- Set up and configure a monorepo project structure
-- Deploy infrastructure using Terraform on AWS
-- Build and deploy serverless Lambda functions
-- Configure AWS services including RDS, Cognito, CloudFront, API Gateway, and Bedrock
-- Develop a full-stack application with React frontend and Node.js backend
+- Set up a local development environment using Docker Compose for PostgreSQL
+- Understand a microservice architecture (React, Spring Boot, FastAPI, Bedrock AgentCore)
+- Configure necessary AWS services including S3 for file storage and Bedrock for AI capabilities
+- Run backend services, AI engines, and the React frontend locally
+- Experience the end-to-end flow of an AI-powered educational application
 
-The project demonstrates modern cloud architecture patterns using:
-- **Monorepo Architecture** - TurboRepo for efficient builds and dependency management
-- **Serverless Backend** - AWS Lambda functions for API endpoints and processing
-- **AI Integration** - AWS Bedrock for natural language processing and embeddings
-- **Infrastructure as Code** - Terraform for managing AWS resources
-- **Modern Frontend** - React 19 with Vite and TailwindCSS
+The project demonstrates modern software architecture patterns using:
+- **Comprehensive Backend** — Java 17 + Spring Boot 3.5 for robust REST API endpoints, authentication (JWT/OAuth2), and classroom management
+- **Generative AI Services** — Python 3.12 + FastAPI for automated exercise generation, learning roadmaps, and document processing (via OpenAI & AWS S3)
+- **Agentic AI Tutor (Slozy)** — LangGraph ReAct Agent deployed on AWS Bedrock AgentCore for conversational, RAG-based tutoring with pgvector
+- **Modern Frontend** — React 18 with TypeScript, Vite, and TailwindCSS
+- **Containerized Database** — PostgreSQL with pgvector extension deployed via Docker Compose
 
 #### Content
 
-1. [Workshop overview](5.1-Workshop-overview/)
+1. [Workshop Overview](5.1-Workshop-overview/)
 2. [Prerequisites](5.2-Prerequiste/)
-3. [Project Structure](5.3-S3-vpc/)
-4. [Infrastructure Setup](5.4-S3-onprem/)
-5. [Development & Deployment](5.5-Policy/)
+3. [Project Structure](5.3-Project-Structure/)
+4. [Infrastructure Setup](5.4-Infrastructure-Setup/)
+5. [Development & Deployment](5.5-Deployment/)
 6. [Cleanup](5.6-Cleanup/)

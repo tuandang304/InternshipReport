@@ -1,35 +1,35 @@
 ---
 title: "Workshop"
-date: 2025-09-09
+date: 2026-04-03
 weight: 5
 chapter: false
 pre: " <b> 5. </b> "
 ---
-# MapVibe - Xây dựng Nền tảng Khám phá Địa điểm với AI
+# Slothub — Xây dựng Nền tảng Học tập & Quản lý Lớp học Thông minh với AI
 
 #### Tổng quan
 
-**MapVibe** là một ứng dụng web hiện đại giúp người dùng khám phá các địa điểm ăn uống và hoạt động bằng cách sử dụng truy vấn ngôn ngữ tự nhiên được hỗ trợ bởi các dịch vụ AI của AWS. Được xây dựng với kiến trúc monorepo sử dụng TurboRepo và Bun, MapVibe tận dụng các dịch vụ serverless của AWS để cung cấp một giải pháp có khả năng mở rộng và tối ưu chi phí.
+**Slothub** là một nền tảng học trực tuyến sáng tạo, tích hợp AI đa tầng để mang đến trải nghiệm giáo dục cá nhân hóa sâu sắc và thông minh. Được xây dựng với kiến trúc microservice, dự án tận dụng các framework phát triển hiện đại và dịch vụ đám mây AWS để cung cấp một giải pháp thông minh, có khả năng mở rộng cho cả giáo viên và học sinh.
 
 Trong workshop này, bạn sẽ học cách:
-- Thiết lập và cấu hình cấu trúc dự án monorepo
-- Triển khai hạ tầng sử dụng Terraform trên AWS
-- Xây dựng và triển khai các hàm Lambda serverless
-- Cấu hình các dịch vụ AWS bao gồm RDS, Cognito, CloudFront, API Gateway và Bedrock
-- Phát triển ứng dụng full-stack với frontend React và backend Node.js
+- Thiết lập môi trường phát triển cục bộ sử dụng Docker Compose cho PostgreSQL
+- Hiểu về kiến trúc microservice (React, Spring Boot, FastAPI, Bedrock AgentCore)
+- Cấu hình các dịch vụ AWS cần thiết như S3 để lưu trữ file và Bedrock cho AI
+- Chạy các dịch vụ backend, AI và frontend React trên local
+- Trải nghiệm luồng hoạt động từ đầu đến cuối của một ứng dụng giáo dục hỗ trợ bởi AI
 
-Dự án thể hiện các mẫu kiến trúc cloud hiện đại sử dụng:
-- **Kiến trúc Monorepo** - TurboRepo để quản lý build và dependencies hiệu quả
-- **Backend Serverless** - Các hàm AWS Lambda cho API endpoints và xử lý
-- **Tích hợp AI** - AWS Bedrock cho xử lý ngôn ngữ tự nhiên và embeddings
-- **Infrastructure as Code** - Terraform để quản lý tài nguyên AWS
-- **Frontend Hiện đại** - React 19 với Vite và TailwindCSS
+Dự án thể hiện các mẫu kiến trúc phần mềm hiện đại sử dụng:
+- **Backend Toàn diện** — Java 17 + Spring Boot 3.5 cho REST API mạnh mẽ, xác thực (JWT/OAuth2), và quản lý lớp học
+- **Dịch vụ Generative AI** — Python 3.12 + FastAPI để tự động tạo bài tập, lộ trình học, và xử lý tài liệu (qua OpenAI & AWS S3)
+- **Gia sư AI Slozy** — LangGraph ReAct Agent triển khai trên AWS Bedrock AgentCore cho hội thoại RAG-tutoring với pgvector
+- **Frontend Hiện đại** — React 18 với TypeScript, Vite và TailwindCSS
+- **Cơ sở dữ liệu Container hóa** — PostgreSQL với pgvector extension được triển khai qua Docker Compose
 
 #### Nội dung
 
-1. [Tổng quan về workshop](5.1-Workshop-overview/)
+1. [Tổng quan về Workshop](5.1-Workshop-overview/)
 2. [Yêu cầu tiên quyết](5.2-Prerequiste/)
-3. [Cấu trúc dự án](5.3-S3-vpc/)
-4. [Thiết lập hạ tầng](5.4-S3-onprem/)
-5. [Phát triển & Triển khai](5.5-Policy/)
+3. [Cấu trúc dự án](5.3-Project-Structure/)
+4. [Thiết lập hạ tầng](5.4-Infrastructure-Setup/)
+5. [Phát triển & Triển khai](5.5-Deployment/)
 6. [Dọn dẹp](5.6-Cleanup/)

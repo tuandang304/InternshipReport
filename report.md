@@ -1,10 +1,10 @@
-# Báo cáo Tổng quan Dự án EduCare
+# Báo cáo Tổng quan Dự án Slothub
 
 ---
 
 ## 1. Giới thiệu
 
-**EduCare** là nền tảng học trực tuyến dành cho thị trường Việt Nam, tích hợp AI để hỗ trợ học tập cá nhân hóa. Hệ thống gồm 4 dịch vụ độc lập, dùng chung một cơ sở dữ liệu PostgreSQL.
+**Slothub** là nền tảng học trực tuyến dành cho thị trường Việt Nam, tích hợp AI để hỗ trợ học tập cá nhân hóa. Hệ thống gồm 4 dịch vụ độc lập, dùng chung một cơ sở dữ liệu PostgreSQL.
 
 ---
 
@@ -40,7 +40,7 @@
 - Tạo lộ trình học (`/roadmap`), quản lý nội dung sách/môn/lớp.
 - Proxy tin nhắn chat đến agent Slozy.
 - Dùng **OpenAI API** để embedding & generation.
-- Lưu trữ file trên **AWS S3** (`educare-upload-2026`, region `ap-southeast-1`).
+- Lưu trữ file trên **AWS S3** (`Slothub-upload-2026`, region `ap-southeast-1`).
 - Kết nối DB trực tiếp qua `psycopg2`, tự chạy migration lúc khởi động.
 
 ### Agent-Core — Slozy AI Tutor
@@ -57,7 +57,7 @@
 
 - Giao tiếp với backend qua `api.ts`, đọc URL từ biến môi trường (`VITE_API_BASE_URL`, `VITE_FAST_API_BASE_URL`).
 - Quản lý auth bằng `AuthContext`, token lưu ở `localStorage`.
-- Tự động đăng xuất khi nhận sự kiện `educare:session-expired` (401).
+- Tự động đăng xuất khi nhận sự kiện `Slothub:session-expired` (401).
 
 ---
 
@@ -70,7 +70,7 @@
 | Database local | Docker Compose (PostgreSQL :5432 + pgAdmin :5050) |
 | Build tools | Maven (backend), npm/Vite (frontend), uv (AI services) |
 
-**pgAdmin:** http://localhost:5050 — `admin@educare.com` / `admin`
+**pgAdmin:** http://localhost:5050 — `admin@Slothub.com` / `admin`
 
 ---
 
@@ -126,3 +126,4 @@ LOCAL_DEV=1   # agent-core: dùng in-memory checkpointer thay vì AgentCore
 ---
 
 *Ngày lập báo cáo: 03/04/2026*
+

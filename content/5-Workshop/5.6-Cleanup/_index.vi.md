@@ -1,113 +1,40 @@
 ---
-title : "Dọn dẹp"
-date: 2025-09-09
-weight : 6
-chapter : false
-pre : " <b> 5.6. </b> "
-
+title: "Dọn dẹp"
+date: 2026-04-03
+weight: 6
+chapter: false
+pre: " <b> 5.6. </b> "
 ---
 
-#### Tổng quan
+#### Dọn dẹp Tài nguyên & Kết thúc Dự án
 
-Chúc mừng bạn đã hoàn thành workshop MapVibe!
+Khi bạn đã hoàn thành việc quan sát cũng như test ứng dụng Slothub ở môi trường nội bộ, việc tắt hệ thống gọn gàng để trả lại tài nguyên máy chủ hay phòng hờ cước phí AWS phát sinh là cực kỳ quan trọng. Hãy làm theo trình tự:
 
-Trong workshop này, bạn đã học:
-- Cách thiết lập monorepo với TurboRepo và Bun
-- Cách triển khai hạ tầng serverless sử dụng Terraform
-- Cách xây dựng và triển khai ứng dụng React
-- Cách cấu hình các dịch vụ AWS (Lambda, RDS, API Gateway, CloudFront, Cognito)
-- Cách tích hợp các dịch vụ AI (Bedrock, Rekognition, Textract)
+##### 1. Đóng Các Trình Chạy Hệ Thống Local
+Kiểm tra lại toàn bộ Terminal đang mở để chạy lệnh React, Spring Boot, FastAPI và Agent-Core, ấn tổ hợp `Ctrl+C` để giải phóng tất cả.
 
-#### Dọn dẹp Tài nguyên
-
-Để tránh chi phí liên tục, hãy dọn dẹp tất cả tài nguyên AWS khi bạn hoàn thành.
-
-##### 1. Xóa Hạ tầng với Terraform
-
-Cách dễ nhất để dọn dẹp là sử dụng Terraform:
-
+##### 2. Kết thúc Docker Compose Database
+Chuyển tới thư mục có chứa cấu hình `docker-compose.yml`.
+Nếu chỉ muốn tắt Container nhưng giữ lại Database (chuẩn bị chạy tiếp vào mai):
 ```bash
-cd infrastructure/terraform
-
-# Xem lại những gì sẽ bị xóa
-terraform plan -destroy
-
-# Xóa tất cả tài nguyên
-terraform destroy
+docker-compose stop
+```
+Trường hợp muốn xóa sạch cài đặt (Reset trắng toàn bộ Users và data Vector):
+```bash
+docker-compose down -v
 ```
 
-Lệnh này sẽ xóa:
-- Tất cả Lambda functions
-- API Gateway
-- RDS database instance
-- CloudFront distributions
-- S3 buckets (nếu trống)
-- Cognito User Pool
-- VPC và tài nguyên networking
-- Route53 hosted zones
-- WAF web ACLs
-- Secrets Manager secrets
+##### 3. Lưu trữ Đám mây (AWS S3)
+Xóa bỏ các tập tin và bài tập được tải lên để đảm bảo tài khoản AWS của bạn nằm trong Giới hạn Free Tier:
+1. Truy cập **AWS Management Console**.
+2. Tại dashboard **S3**, chọn chính xác tên bucket bạn đã trỏ (vd: `Slothub-upload-2026`).
+3. Dùng chức năng "Empty bucket" và xác nhận.
+4. (Tùy chọn) Bấm Xóa hoàn toàn ("Delete") Bucket đó khỏi tài khoản. 
 
-**Lưu ý**: Một số tài nguyên có thể mất thời gian để xóa (ví dụ: RDS final snapshot, CloudFront propagation).
+##### 4. Loại bỏ AWS Bedrock Agent (Nếu có Deploy)
+Trong trường hợp bạn tắt mode `LOCAL_DEV=1` đồng thời đẩy Trợ lý lên thẳng **AWS Bedrock AgentCore**:
+1. Ở AWS Console, truy cập Amazon Bedrock.
+2. Tại màn hình Agent, chọn Agent của bạn đang chạy.
+3. Remove tất cả các bản nháp (Alias) và chọn Xóa (Delete Agent) để ngưng sử dụng Bedrock.
 
-##### 2. Dọn dẹp Thủ công (nếu cần)
-
-Nếu Terraform destroy không xóa hết mọi thứ, hãy dọn dẹp thủ công:
-
-**S3 Buckets:**
-```bash
-# Liệt kê buckets
-aws s3 ls | grep mapvibe
-
-# Làm trống và xóa từng bucket
-aws s3 rm s3://bucket-name --recursive
-aws s3 rb s3://bucket-name
-```
-
-**CloudWatch Logs:**
-```bash
-# Xóa log groups
-aws logs describe-log-groups --query "logGroups[?contains(logGroupName, 'mapvibe')]" --output table
-aws logs delete-log-group --log-group-name <log-group-name>
-```
-
-**Route53 Hosted Zones:**
-```bash
-# Liệt kê hosted zones
-aws route53 list-hosted-zones --query "HostedZones[?contains(Name, 'mapvibe')]"
-
-# Xóa hosted zone (yêu cầu xóa tất cả records trước)
-aws route53 delete-hosted-zone --id <hosted-zone-id>
-```
-
-##### 3. Xác minh Dọn dẹp
-
-Xác minh tất cả tài nguyên đã được xóa:
-
-```bash
-# Kiểm tra Lambda functions
-aws lambda list-functions --query "Functions[?contains(FunctionName, 'mapvibe')]"
-
-# Kiểm tra S3 buckets
-aws s3 ls | grep mapvibe
-
-# Kiểm tra RDS instances
-aws rds describe-db-instances --query "DBInstances[?contains(DBInstanceIdentifier, 'mapvibe')]"
-```
-
-#### Lưu ý quan trọng
-
-- **Mất dữ liệu**: Xóa hạ tầng sẽ xóa tất cả dữ liệu (database, S3 objects, v.v.)
-- **Backup**: Xuất bất kỳ dữ liệu quan trọng nào trước khi dọn dẹp
-- **Chi phí**: Một số tài nguyên (như RDS snapshots) có thể phát sinh chi phí lưu trữ tối thiểu
-- **DNS**: Nếu sử dụng custom domain, cập nhật DNS records sau khi dọn dẹp
-
-#### Bước tiếp theo
-
-Sau khi dọn dẹp:
-1. Xem lại những gì bạn đã học
-2. Thử nghiệm với các sửa đổi
-3. Xem xét các mẫu triển khai production
-4. Khám phá các dịch vụ AWS bổ sung
-
-Cảm ơn bạn đã hoàn thành workshop MapVibe!
+Thực hiện dọn dẹp cẩn thận giúp bạn tiết kiệm chi phí không đáng có từ những nguồn tài nguyên rác của AWS. Bài workshop Slothub (Slothub) tới đây xin được khép lại.

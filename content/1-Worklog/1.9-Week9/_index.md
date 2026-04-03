@@ -11,6 +11,7 @@ pre: " <b> 1.9. </b> "
 - Practice deploying complex architectures (ECS, ALB, API Gateway, Serverless) using CDK and Nested Stacks.
 - Reinforce Infrastructure as Code (IaC) concepts by deploying a complete Three-Tier Architecture.
 - Complete the data preparation and design phase (Database/UI) for the team project.
+- Enhance knowledge on LLMs and Prompt Engineering through community events.
 
 ### TASKS OF WEEK 9:
 
@@ -21,6 +22,7 @@ pre: " <b> 1.9. </b> "
 | **Wed** | **- Practice Lab 20: CDK Basics - 2**<br>+ Introduction<br>+ Preparation Steps<br>* Create IAM Role<br>* Launch an EC2 Server<br>* Configure VSCode Environment<br>+ ECS, ALB and API Gateway<br>+ Lambda and S3<br>+ Nested stack<br>* Create nested stacks with CDK<br>+ Resource Cleanup | 11/03/2026 | 11/03/2026 | [Lab 20 Intro](https://000076.awsstudygroup.com/vi/1-introduction/)<br>[ECS & ALB](https://000076.awsstudygroup.com/vi/3-ecs-alb-and-api-gateway/)<br>[Nested Stack](https://000076.awsstudygroup.com/vi/5-nested-stack/) |
 | **Thu** | **- Team Project Meeting: Complete data collection, feedback to improve Figma UI design** | 12/03/2026 | 12/03/2026 | |
 | **Fri** | **- Practice Lab 21: Introduction to Infrastructure as Code**<br>+ Introduction<br>+ Preparation Steps<br>+ Create Lambda function<br>+ Create VPC and EC2<br>+ Deploy Three-Tier Architecture<br>* Deploy CloudFormation Stack<br>* Check Web Tier access<br>* Check Application Tier access<br>* Check Database Tier access<br>+ Resource Cleanup | 13/03/2026 | 13/03/2026 | [Lab 21 Intro](https://000102.awsstudygroup.com/vi/1-introduction/)<br>[Create Lambda](https://000102.awsstudygroup.com/vi/3-createlambda/)<br>[Three Tier](https://000102.awsstudygroup.com/vi/5-threetierweb/) |
+| **Sat** | **- Attend Event: Cloud Mastery — Automated Prompt Engineering: Enhancing LLM Output Quality** | 14/03/2026 | 14/03/2026 | |
 
 ### ACHIEVEMENTS IN WEEK 9:
 1. Successfully set up CDK working environments (Cloud9, VSCode) and deployed basic infrastructure templates.

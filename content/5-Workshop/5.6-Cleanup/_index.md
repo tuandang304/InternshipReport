@@ -1,113 +1,40 @@
 ---
-title : "Cleanup"
-date: 2025-09-09
-weight : 6
-chapter : false
-pre : " <b> 5.6. </b> "
-
+title: "Cleanup"
+date: 2026-04-03
+weight: 6
+chapter: false
+pre: " <b> 5.6. </b> "
 ---
 
-#### Overview
+#### Project Cleanup and Teardown
 
-Congratulations on completing the MapVibe workshop!
+If you deployed the application locally and simply want to free up device resources or reset the database cleanly, follow these cleanup steps:
 
-In this workshop, you learned:
-- How to set up a monorepo with TurboRepo and Bun
-- How to deploy serverless infrastructure using Terraform
-- How to build and deploy React applications
-- How to configure AWS services (Lambda, RDS, API Gateway, CloudFront, Cognito)
-- How to integrate AI services (Bedrock, Rekognition, Textract)
+##### 1. Clean Local App Instances
+Navigate to the terminals where you ran React, Spring Boot, FastAPI, and Agent-Core independently and press `Ctrl+C` to terminate the isolated instances.
 
-#### Cleanup Resources
-
-To avoid ongoing costs, clean up all AWS resources when you're done.
-
-##### 1. Destroy Infrastructure with Terraform
-
-The easiest way to clean up is using Terraform:
-
+##### 2. Teardown Docker Compose Database
+Move to the directory where your `docker-compose.yml` is located.
+To simply stop the containers (preserving data inside named volumes):
 ```bash
-cd infrastructure/terraform
-
-# Review what will be destroyed
-terraform plan -destroy
-
-# Destroy all resources
-terraform destroy
+docker-compose stop
+```
+If you wish to wipe the PostgreSQL database entirely (including user accounts and RAG vectors):
+```bash
+docker-compose down -v
 ```
 
-This will remove:
-- All Lambda functions
-- API Gateway
-- RDS database instance
-- CloudFront distributions
-- S3 buckets (if empty)
-- Cognito User Pool
-- VPC and networking resources
-- Route53 hosted zones
-- WAF web ACLs
-- Secrets Manager secrets
+##### 3. Cloud Storage (AWS S3)
+To ensure no extra charges arise from forgotten files:
+1. Log into your **AWS Management Console**.
+2. Go to the **S3** Dashboard and click on your bucket (e.g., `Slothub-upload-2026`).
+3. Click "Empty bucket" to delete all stored PDFs and images.
+4. (Optional) Select the bucket and click "Delete" to permanently terminate the storage container.
 
-**Note**: Some resources may take time to delete (e.g., RDS final snapshot, CloudFront propagation).
+##### 4. AWS Bedrock Agent (If Deployed)
+If you disabled `LOCAL_DEV=1` and pushed the Agent setup directly to **AWS Bedrock AgentCore**:
+1. Open the Bedrock console.
+2. Select your provisioned agent alias.
+3. Delete the alias and subsequently delete the deployed agent to prevent recurring costs mapped to your free tier.
 
-##### 2. Manual Cleanup (if needed)
-
-If Terraform destroy doesn't remove everything, manually clean up:
-
-**S3 Buckets:**
-```bash
-# List buckets
-aws s3 ls | grep mapvibe
-
-# Empty and delete each bucket
-aws s3 rm s3://bucket-name --recursive
-aws s3 rb s3://bucket-name
-```
-
-**CloudWatch Logs:**
-```bash
-# Delete log groups
-aws logs describe-log-groups --query "logGroups[?contains(logGroupName, 'mapvibe')]" --output table
-aws logs delete-log-group --log-group-name <log-group-name>
-```
-
-**Route53 Hosted Zones:**
-```bash
-# List hosted zones
-aws route53 list-hosted-zones --query "HostedZones[?contains(Name, 'mapvibe')]"
-
-# Delete hosted zone (requires deleting all records first)
-aws route53 delete-hosted-zone --id <hosted-zone-id>
-```
-
-##### 3. Verify Cleanup
-
-Verify all resources are deleted:
-
-```bash
-# Check Lambda functions
-aws lambda list-functions --query "Functions[?contains(FunctionName, 'mapvibe')]"
-
-# Check S3 buckets
-aws s3 ls | grep mapvibe
-
-# Check RDS instances
-aws rds describe-db-instances --query "DBInstances[?contains(DBInstanceIdentifier, 'mapvibe')]"
-```
-
-#### Important Notes
-
-- **Data Loss**: Destroying infrastructure will delete all data (database, S3 objects, etc.)
-- **Backup**: Export any important data before cleanup
-- **Costs**: Some resources (like RDS snapshots) may incur minimal storage costs
-- **DNS**: If using a custom domain, update DNS records after cleanup
-
-#### Next Steps
-
-After cleanup:
-1. Review what you learned
-2. Experiment with modifications
-3. Consider production deployment patterns
-4. Explore additional AWS services
-
-Thank you for completing the MapVibe workshop!
+By adhering to these cleanup routines after a workshop, you safeguard against unforeseen expenses from unused, persistent resources in AWS.

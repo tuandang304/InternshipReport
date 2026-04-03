@@ -1,46 +1,39 @@
 ---
 title : "Introduction"
-date: 2025-09-09
+date: 2026-04-03
 weight : 1
 chapter : false
 pre : " <b> 5.1. </b> "
-
 ---
 
-#### About MapVibe
+#### About Slothub (Slothub)
 
-**MapVibe** is an AI-powered location discovery platform that helps users find dining and activity locations in Ho Chi Minh City using natural language queries. Instead of traditional keyword searches, users can express their needs in conversational language, such as "I'm feeling sad today, is there any drink place that can help me relieve my sadness?"
+**Slothub (Slothub)** is an intelligent online learning and management platform designed to unify the teaching and learning experience. It replaces disconnected tools (gradebooks, chat groups, assignment forms) with an all-in-one ecosystem enhanced by Artificial Intelligence. 
 
-The platform leverages AWS AI services including:
-- **AWS Bedrock** - For natural language processing using Titan embedding model and Claude LLM
-- **Amazon Rekognition** - For content moderation of user-uploaded images
-- **Amazon Textract** - For extracting text from menu images and signs
+The platform leverages powerful technologies including:
+- **AWS Bedrock AgentCore** - Powering **Slozy Assistant**, a conversational AI tutor that uses LangGraph ReAct Agent architecture and RAG (Retrieval-Augmented Generation) against a PostgreSQL pgvector database to ensure accurate, curriculum-based answers.
+- **OpenAI API** - For automated document parsing and generative content (exercises, learning roadmaps).
+- **Amazon S3** - For secure, structured storage of uploaded course materials (PDF documents) and generated assets.
+- **Java Spring Boot** - Providing a robust REST API backend for core educational domain logic (classrooms, users, assignments, timetables).
 
-#### Workshop overview
+#### Workshop Overview
 
-In this workshop, you will learn how to build and deploy MapVibe, a full-stack application using:
+In this workshop, you will learn how to initialize, configure, and locally deploy Slothub's microservice architecture:
 
-- **Monorepo Architecture** - Using TurboRepo and Bun for efficient development
-- **Frontend Applications**:
-  - `apps/web` - Main user-facing web application (React 19, Vite, TailwindCSS)
-  - `apps/admin` - Admin dashboard for content management
-- **Backend Services**:
-  - `apps/api` - Main API Lambda function handling REST endpoints
-  - Multiple specialized Lambda functions for embeddings, RAG, OCR, Rekognition, and review aggregation
-- **Infrastructure**:
-  - Terraform modules for AWS services (VPC, RDS, Lambda, API Gateway, CloudFront, Cognito, etc.)
-  - Infrastructure as Code approach for reproducible deployments
+- **Frontend (`frontend/`)**: React 18, TypeScript, Vite, Tailwind CSS. This component handles the user interface and dynamically renders AI output widgets.
+- **Backend (`backend/`)**: Spring Boot 3.5, Java 17. Handles user authentication (JWT/OAuth2), data management, and the core educational domains.
+- **AI Service (`AI/`)**: Python 3.12, FastAPI. Responsible for automated content generation, S3 file uploading, and proxying requests to the AI model.
+- **Agent-Core (`agent-core/`)**: Python 3.10, LangGraph. The brain behind the Slozy AI Assistant, running locally with `MemorySaver` for testing or AWS Bedrock for production.
+- **Database**: PostgreSQL with pgvector extension running easily via **Docker Compose**.
 
 #### Architecture Overview
 
-The MapVibe architecture follows a serverless-first approach:
+The Slothub platform follows a microservice/Agentic AI approach:
 
-1. **Frontend**: React applications deployed to S3 and served via CloudFront CDN
-2. **API Layer**: API Gateway routes requests to Lambda functions
-3. **Data Layer**: PostgreSQL RDS database for structured data storage
-4. **AI Services**: Bedrock for embeddings and LLM, Rekognition for image analysis
-5. **Storage**: S3 buckets for photos and static assets
-6. **Authentication**: AWS Cognito for user management
-7. **Security**: WAF for protection, Route53 and ACM for custom domains
+1. **User Interaction**: Users access the React frontend.
+2. **Core Logic**: Frontend calls the Spring Boot API for authentication and classroom data.
+3. **AI Workloads**: Frontend/Backend delegates content generation requests to the FastAPI Python service which calls OpenAI APIs and interact with AWS S3.
+4. **Intelligent Tutoring**: The chat component interacts with the Agent-Core (Slozy) to perform RAG over PostgreSQL pgvector context.
+5. **Data Layer**: All services share a unified PostgreSQL database managed via Docker Compose.
 
-![overview](/images/5-Workshop/4N1D-Architechture.drawio.png)
+![Slothub Architecture](/images/2-Proposal/Achitecture-Page-1.drawio.svg)
