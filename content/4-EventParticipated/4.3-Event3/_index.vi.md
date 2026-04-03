@@ -6,151 +6,101 @@ chapter: false
 pre: " <b> 4.3. </b> "
 ---
 
-# Báo Cáo Tóm Tắt: "Workshop – Data Science trên AWS"
+# Báo Cáo Tóm Tắt: "AWS Community Day Vietnam"
 
 ### Tổng Quan Sự Kiện
 
-- **Tên Sự Kiện:** Workshop – Data Science trên AWS  
-- **Ngày:** 16 tháng 10, 2025  
+- **Tên Sự Kiện:** AWS Community Day Vietnam
+- **Ngày:** 21 tháng 3, 2026  
 - **Vai Trò:** Người tham dự  
-- **Hình Thức:** Workshop thực hành với labs có hướng dẫn  
-- **Địa Điểm:** Đại học FPT, Thủ Đức, Thành phố Hồ Chí Minh, Việt Nam
+- **Hình Thức:** Hội nghị đa track với các bài nói chuyện và thảo luận
 
-Workshop toàn diện này cung cấp một walkthrough hoàn chỉnh về quy trình data science end-to-end trên AWS, từ ingestion và chuẩn bị dữ liệu ban đầu qua training, đánh giá, và triển khai model. Định dạng kết hợp các bài giảng tập trung với các labs thực hành có hướng dẫn, cho phép người tham dự thử nghiệm trực tiếp trong môi trường AWS và có được kinh nghiệm thực tế với các dịch vụ thực.
+AWS Community Day Vietnam là sự kiện trọn ngày quy tụ các AWS practitioners, chuyên gia ngành và những builders đầy triển vọng để thảo luận về tương lai của cloud computing và AI tại Việt Nam. Sự kiện có các phiên chia sẻ từ các chuyên gia đại diện cho các công ty như GotyMeX, Katalon, VPBank và Renova, những người mang đến góc nhìn đã được "kiểm chứng thực tế" về Platform Engineering, GenAIOps và kỷ nguyên Agentic AI đang nổi lên.
 
-### Cấu Trúc Workshop
+### Chủ Đề Chính & Insights Từ Chuyên Gia
 
-Workshop được chia thành nhiều modules, mỗi module xây dựng dựa trên module trước:
+#### Platform Engineering Là Nền Tảng
+Sự kiện khám phá cách các nền tảng hạ tầng hiện đại, vững chắc là yếu tố thiết yếu để biến sự phức tạp của AI thành tốc độ:
+- Xây dựng hạ tầng cloud có khả năng mở rộng và đáng tin cậy làm nền tảng cho các workload AI/ML
+- Cách các thực hành Platform Engineering giúp tổ chức chuẩn hóa, tự động hóa và tăng tốc quy trình phát triển
+- Vai trò của Internal Developer Platforms (IDPs) trong việc cho phép các team tự phục vụ hạ tầng mà không gặp bottleneck
+- Các ví dụ thực tế từ diễn giả về cách tổ chức của họ áp dụng Platform Engineering để cải thiện năng suất developer
 
-#### Module 1: Ingestion và Lưu Trữ Dữ Liệu
-- **Amazon S3 như nền tảng data lake**: Hiểu vai trò của S3 như lưu trữ trung tâm cho các dự án data science
-- **Tổ chức dữ liệu**: Best practices để tổ chức dữ liệu trong S3 (raw, processed, curated layers)
-- **Định dạng dữ liệu**: Chọn giữa CSV, Parquet, JSON, và các định dạng khác cho các use case khác nhau
-- **Tính năng S3 cho data science**: Versioning, lifecycle policies, và access controls
-- **Lab thực hành**: Thiết lập cấu trúc S3 bucket và upload sample datasets
+#### Sự Trỗi Dậy Của Kỷ Nguyên Agentic
+Một chủ đề lớn của sự kiện là sự chuyển dịch từ tương tác prompt-response đơn giản sang các hệ thống Agentic AI tinh vi:
+- **Multi-Agent Workflows:** Cách nhiều AI agents có thể hợp tác để giải quyết các vấn đề phức tạp ở quy mô doanh nghiệp mà một model đơn lẻ không thể xử lý
+- **GraphRAG:** Kết hợp knowledge graphs với Retrieval-Augmented Generation để cung cấp phản hồi phong phú hơn, có ngữ cảnh hơn, hiểu được mối quan hệ giữa các entities
+- **Multimodal Capabilities:** Tận dụng các models có thể xử lý text, hình ảnh, âm thanh và video cùng nhau cho các giải pháp AI toàn diện hơn
+- Vượt qua "AI như chatbot" hướng tới "AI như hệ thống tự động" có khả năng lập luận, lập kế hoạch và thực thi các tác vụ nhiều bước
 
-#### Module 2: Chuẩn Bị Dữ Liệu và ETL
-- **Tổng quan AWS Glue**: Dịch vụ ETL serverless cho chuyển đổi dữ liệu
-- **Glue Data Catalog**: Kho metadata tập trung cho data discovery
-- **AWS Glue DataBrew**: Công cụ chuẩn bị dữ liệu trực quan để làm sạch và chuyển đổi dữ liệu
-- **ETL workflows**: Xây dựng data transformation pipelines
-- **Chất lượng dữ liệu**: Xác định và xử lý missing values, duplicates, và outliers
-- **Lab thực hành**: Tạo Glue job để chuyển đổi raw data thành định dạng processed
+#### AI Production-Grade Là Tiêu Chuẩn
+Các thảo luận nhấn mạnh sự chuyển dịch quan trọng hướng tới việc coi Generative AI như một thành phần production-grade:
+- **Observability:** Triển khai monitoring, logging và tracing toàn diện cho hệ thống AI để hiểu hành vi model trong production
+- **Safety & Guardrails:** Xây dựng các biện pháp bảo vệ để đảm bảo output AI đáng tin cậy, chính xác và phù hợp với yêu cầu kinh doanh
+- **GenAIOps:** Vận hành hóa các quy trình Generative AI với CI/CD, testing, versioning và deployment practices phù hợp — tương tự MLOps nhưng được điều chỉnh cho GenAI stack
+- Đảm bảo Generative AI là thành phần an toàn, hiệu năng cao của technology stack hiện đại
 
-#### Module 3: Khám Phá và Phân Tích Dữ Liệu
-- **Amazon Athena**: Dịch vụ truy vấn tương tác serverless cho dữ liệu S3
-- **SQL queries trên S3**: Viết SQL queries chống lại dữ liệu được lưu trong S3
-- **Tối ưu truy vấn**: Chiến lược phân vùng và tối ưu chi phí
-- **Amazon Redshift**: Data warehousing cho analytics workloads
-- **Redshift Spectrum**: Truy vấn dữ liệu S3 trực tiếp từ Redshift
-- **Lab thực hành**: Chạy exploratory queries trên datasets sử dụng Athena
+### Thu Hẹp Khoảng Cách Nhân Tài: Con Đường Sự Nghiệp
 
-#### Module 4: Phát Triển Model với Amazon SageMaker
-- **SageMaker Studio**: Môi trường phát triển tích hợp cho ML
-- **SageMaker Notebooks**: Jupyter notebooks với môi trường được cấu hình sẵn
-- **Built-in algorithms**: Sử dụng các algorithms được xây dựng sẵn của SageMaker cho các ML tasks phổ biến
-- **Custom model training**: Training models sử dụng custom code và frameworks
-- **Hyperparameter tuning**: Sử dụng automatic model tuning của SageMaker
-- **Experiment tracking**: Quản lý và so sánh các experiments model khác nhau
-- **Lab thực hành**: Xây dựng và training một machine learning model sử dụng SageMaker
+Ngoài các phiên kỹ thuật, một phần quan trọng của sự kiện tập trung vào con người và phát triển sự nghiệp:
 
-#### Module 5: Triển Khai và Giám Sát Model
-- **Triển khai model**: Triển khai models như real-time endpoints
-- **Batch inference**: Chạy predictions trên large datasets
-- **A/B testing**: Testing nhiều phiên bản model trong production
-- **Giám sát model**: Theo dõi hiệu suất model và data drift
-- **Tối ưu chi phí**: Right-sizing endpoints và sử dụng Spot Instances
-- **Lab thực hành**: Triển khai một trained model và thực hiện predictions
+#### Con Đường Sự Nghiệp Hiện Đại
+- Ngành không chỉ tìm kiếm "coders" nữa — mà đang tìm kiếm **"Kiến Trúc Sư Của Kỷ Nguyên Agentic"** có thể thiết kế, xây dựng và vận hành hệ thống AI phức tạp
+- Các vai trò mới nổi trong GenAIOps, Platform Engineering và AI Safety đang tạo ra cơ hội nghề nghiệp mới
+- Hiểu về hạ tầng cloud, distributed systems và AI/ML fundamentals đang trở thành kỳ vọng cơ bản cho kỹ sư hiện đại
 
-### Nội Dung Kỹ Thuật Chi Tiết
+#### Cơ Hội Thực Tập & Nghề Nghiệp Sớm
+- Các cơ hội thực tập thực tế trong hệ sinh thái Cloud và AI được thảo luận cho sinh viên và chuyên gia mới vào nghề
+- Diễn giả nhấn mạnh tầm quan trọng của kinh nghiệm thực hành với production systems, không chỉ kiến thức lý thuyết
+- Con đường từ thực tập sinh đến cloud/AI practitioner đòi hỏi thành thạo các tiêu chuẩn mới trong GenAIOps và Platform Engineering
 
-#### Kiến Trúc Data Lake
-Workshop nhấn mạnh tầm quan trọng của một data lake được thiết kế tốt:
-- **Raw layer**: Lưu trữ dữ liệu chính xác như nhận được từ source systems
-- **Processed layer**: Dữ liệu đã làm sạch và chuyển đổi sẵn sàng cho phân tích
-- **Curated layer**: Datasets sẵn sàng cho business được tối ưu cho các use case cụ thể
-- **Lợi ích**: Data lineage, reproducibility, và tính linh hoạt cho các nhu cầu analytics khác nhau
+### Kiến Thức Kỹ Thuật Quan Trọng
 
-#### AWS Glue Deep Dive
-- **Crawlers**: Tự động phát hiện schema và tạo table definitions
-- **ETL jobs**: Viết transformation logic trong Python hoặc Scala
-- **Job scheduling**: Sử dụng EventBridge để trigger ETL jobs
-- **Tối ưu chi phí**: Hiểu pricing của Glue và tối ưu job execution
+#### GenAIOps Trong Thực Tế
+- GenAIOps là sự phát triển tự nhiên của MLOps, giải quyết các thách thức riêng của việc triển khai và duy trì hệ thống Generative AI ở quy mô lớn
+- Các thực hành quan trọng bao gồm prompt versioning, model evaluation pipelines, cost monitoring và output quality tracking
+- Tổ chức cần xây dựng vòng phản hồi liên tục cải thiện hiệu suất hệ thống AI dựa trên sử dụng thực tế
 
-#### Khả Năng SageMaker
-- **Managed infrastructure**: Không cần provision hoặc quản lý servers
-- **Auto-scaling**: Tự động scaling training và inference resources
-- **Spot Instances**: Sử dụng Spot Instances cho training hiệu quả về chi phí
-- **Model registry**: Versioning và quản lý model artifacts
-- **Pipelines**: Xây dựng ML pipelines cho automated workflows
+#### Platform Engineering Cho AI
+- Một lớp nền tảng được thiết kế tốt trừu tượng hóa sự phức tạp của hạ tầng, cho phép các team AI tập trung vào phát triển model và thử nghiệm
+- Infrastructure-as-Code (IaC) và GitOps practices là thiết yếu cho việc quản lý hạ tầng hỗ trợ AI workloads
+- Self-service platforms giảm thời gian thử nghiệm và đẩy nhanh tốc độ đổi mới AI
 
-#### Patterns Tích Hợp
-- **End-to-end pipeline**: Kết nối S3 → Glue → Athena → SageMaker
-- **Event-driven workflows**: Sử dụng EventBridge để orchestrate data science workflows
-- **CI/CD cho ML**: Tích hợp ML workflows vào thực hành DevOps
-- **Monitoring và alerting**: Sử dụng CloudWatch để giám sát ML workloads
-
-### Bài Học Quan Trọng
-
-#### Quy Trình Data Science trên AWS
-- Hiểu cách các dịch vụ AWS khác nhau phù hợp với nhau trong một dự án data science hoàn chỉnh
-- Tầm quan trọng của tổ chức và quản trị dữ liệu ngay từ đầu
-- Cách managed services giảm overhead quản lý infrastructure
-
-#### Best Practices
-- **Tổ chức dữ liệu**: Tách biệt raw, processed, và curated data layers
-- **Reproducibility**: Sử dụng versioning và experiment tracking
-- **Tối ưu chi phí**: Right-sizing resources và sử dụng instance types phù hợp
-- **Bảo mật**: Triển khai access controls và encryption phù hợp
-
-#### Kỹ Năng Thực Tế
-- Thiết lập kiến trúc data lake trên S3
-- Tạo ETL jobs với AWS Glue
-- Truy vấn dữ liệu với Athena
-- Training models với SageMaker
-- Triển khai và giám sát models trong production
+#### Kiến Trúc Agentic AI
+- Hệ thống Multi-Agent yêu cầu orchestration cẩn thận, xử lý lỗi và quản lý state
+- GraphRAG cung cấp khả năng hiểu ngữ cảnh vượt trội so với traditional vector-based RAG bằng cách tận dụng mối quan hệ giữa entities
+- Xây dựng hệ thống Agentic AI đáng tin cậy đòi hỏi kết hợp nền tảng kỹ thuật vững chắc với chuyên môn AI/ML
 
 ### Bài Học Cá Nhân
 
-#### Hiểu Biết Kỹ Thuật
-- Tôi có được hiểu biết toàn diện về một data science pipeline hoàn chỉnh trên AWS trông như thế nào trong thực tế
-- Các labs thực hành giúp tôi tự tin sử dụng các dịch vụ như S3, Glue, Athena, và SageMaker cùng nhau
-- Tôi hiểu cách thiết kế data architectures hỗ trợ cả analytics và machine learning
+#### Phát Triển Kỹ Thuật
+- Tôi có được hiểu biết sâu hơn về cách Platform Engineering và GenAIOps practices phối hợp để cho phép hệ thống AI production-grade
+- Các phiên về Multi-Agent workflows và GraphRAG mở rộng góc nhìn của tôi về những gì có thể vượt ra ngoài ứng dụng LLM đơn giản
+- Hiểu tầm quan trọng của Observability và Safety trong hệ thống AI cho tôi góc nhìn trưởng thành hơn về "AI sẵn sàng cho production" thực sự có nghĩa là gì
 
-#### Insights Quy Trình
-- Tầm quan trọng của việc suy nghĩ về toàn bộ pipeline, không chỉ model training
-- Cách chuẩn bị dữ liệu thường mất nhiều thời gian hơn phát triển model
-- Giá trị của managed services trong việc cho phép data scientists tập trung vào phân tích thay vì infrastructure
+#### Góc Nhìn Ngành
+- Năng lượng và chiều sâu kỹ thuật trong phòng cho thấy cộng đồng công nghệ Việt Nam đang tích cực xây dựng — không chỉ nói về — tương lai của AI
+- Các công ty như GotyMeX, Katalon, VPBank và Renova đang dẫn đầu với các triển khai thực tế, đã được kiểm chứng
+- Xây dựng hệ sinh thái AI đẳng cấp thế giới tại Việt Nam là một cuộc marathon, nhưng tiến bộ thể hiện tại sự kiện chứng minh cộng đồng đang đi đúng hướng
 
-#### Ứng Dụng Tương Lai
-- Workshop này truyền cảm hứng cho tôi suy nghĩ về cách thiết kế experiments có thể tái tạo
-- Tôi học được cách tốt hơn để tổ chức datasets cho các dự án tương lai
-- Tôi hiểu cách cấu trúc data science projects cho khả năng mở rộng và khả năng bảo trì
+#### Insights Sự Nghiệp
+- Khái niệm "Kiến Trúc Sư Của Kỷ Nguyên Agentic" gây ấn tượng mạnh — củng cố động lực phát triển kỹ năng trên cả hạ tầng cloud và AI/ML
+- Sự kiện nhấn mạnh rằng thành thạo GenAIOps và Platform Engineering standards là quan trọng cho bất kỳ ai gia nhập lĩnh vực cloud và AI
+- Tinh thần hợp tác của cộng đồng cho thấy có nhiều cơ hội cho tăng trưởng và đóng góp
 
-#### Phát Triển Sự Nghiệp
-- Workshop củng cố sự quan tâm của tôi về data science và ML trên AWS
-- Tôi thấy cách kỹ năng data engineering và ML engineering bổ sung cho nhau
-- Tôi có động lực tiếp tục học về các tính năng SageMaker nâng cao và thực hành MLOps
-
-### Kinh Nghiệm Thực Hành
-
-Định dạng thực hành của workshop đặc biệt có giá trị. Làm việc qua các labs thực tế giúp tôi:
-- Hiểu các bước thực tế liên quan trong mỗi giai đoạn của một dự án data science
-- Xem cách các dịch vụ tích hợp và hoạt động cùng nhau
-- Xây dựng tự tin trong việc sử dụng AWS console và dịch vụ
-- Học từ sai lầm trong môi trường an toàn, có hướng dẫn
-
-Sự kết hợp giữa lý thuyết và thực hành làm cho các khái niệm cụ thể và dễ nhớ hơn nhiều so với các phiên chỉ có bài giảng.
+#### Networking & Cộng Đồng
+- Kết nối với các practitioners từ nhiều nền tảng khác nhau — từ startup đến doanh nghiệp — đều đang làm việc trên các triển khai AI tiên tiến
+- Các thảo luận và phiên Q&A cung cấp ngữ cảnh thực tế khó có được chỉ từ tài nguyên online
+- Sự kiện củng cố niềm tin của tôi về giá trị của học tập và chia sẻ kiến thức theo hướng cộng đồng
 
 ### Trải Nghiệm Sự Kiện
 
-Workshop này là một trong những sự kiện thực tế và thực hành nhất mà tôi đã tham dự. Cách tiếp cận từng bước, kết hợp với các dịch vụ AWS thực tế và datasets thực tế, làm cho nó cảm thấy như làm việc trên một dự án thực tế thay vì chỉ học lý thuyết.
+Tham dự AWS Community Day Vietnam là trải nghiệm truyền cảm hứng vượt xa nội dung kỹ thuật. Sự kiện thể hiện tinh thần hợp tác và tài năng đáng kinh ngạc đang thúc đẩy làn sóng đổi mới tiếp theo tại Việt Nam. Rõ ràng rằng "Productivity Playbook" cho thế hệ builders tiếp theo đang được viết ngay tại đây, ngay lúc này.
 
-Các giảng viên có kiến thức và hữu ích, cung cấp hướng dẫn khi chúng tôi gặp vấn đề và giải thích "tại sao" đằng sau best practices, không chỉ "cách làm".
+Sự kết hợp giữa các phiên kỹ thuật chuyên sâu từ chuyên gia ngành và các thảo luận hướng tới tương lai về con đường sự nghiệp và kỷ nguyên Agentic AI đã làm cho đây trở thành một trong những sự kiện có tác động lớn nhất mà tôi đã tham dự. Insights từ các diễn giả tại GotyMeX, Katalon, VPBank và Renova mang lại mức độ tin cậy thực tế khiến mọi phiên đều cảm thấy có thể hành động ngay lập tức.
 
-Workshop này đã cải thiện đáng kể hiểu biết của tôi về cách xây dựng các giải pháp data science sẵn sàng cho production trên AWS, và tôi rất vui mừng áp dụng những bài học này cho các dự án tương lai.
+Sự kiện củng cố cam kết của tôi trong việc phát triển kỹ năng Platform Engineering và GenAIOps, và truyền cảm hứng cho tôi tích cực đóng góp vào cộng đồng AWS đang phát triển tại Việt Nam.
 
 ### Ảnh Sự Kiện
 
-![Enter image alt description](/images/4-Event/event3_img1.jpg)
-![Enter image alt description](/images/4-Event/event3_img2.jpg)
+![AWS Community Day Vietnam](/images/4-Event/event_3.jpg)

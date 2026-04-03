@@ -7,138 +7,86 @@ pre: " <b> 4.2. </b> "
 
 ---
 
-# Báo Cáo Tóm Tắt: "Tái Tưởng Tượng Phát Triển Phần Mềm với AI"
+# Báo Cáo Tóm Tắt: "Cloud Mastery"
 
 ### Tổng Quan Sự Kiện
 
-- **Tên Sự Kiện:** Tái Tưởng Tượng Phát Triển Phần Mềm với AI  
-- **Ngày:** 3 tháng 10, 2025  
+- **Tên Sự Kiện:** Cloud Mastery
+- **Ngày:** 14 tháng 3, 2026  
 - **Vai Trò:** Người tham dự  
-- **Hình Thức:** Buổi nói chuyện kỹ thuật và demo  
-- **Địa Điểm:** Tầng 26, Tòa nhà Bitexco Financial Tower, Quận 1, Thành phố Hồ Chí Minh, Việt Nam
+- **Hình Thức:** Buổi nói chuyện kỹ thuật và chia sẻ kiến thức  
+- **Chủ Đề:** Automated Prompt Engineering: Enhancing LLM Output Quality
 
-Sự kiện này khám phá cách generative AI đang thay đổi cơ bản vòng đời phát triển phần mềm, từ lập kế hoạch và thiết kế ban đầu qua coding, testing, deployment, và operations. Các diễn giả đã demo các quy trình làm việc hỗ trợ bởi AI thực tế và thảo luận các chiến lược để các team áp dụng an toàn và hiệu quả các công cụ mạnh mẽ này.
+Tại sự kiện Cloud Mastery, tôi tham dự phiên chia sẻ với chủ đề **"Automated Prompt Engineering: Enhancing LLM Output Quality"**, khám phá lý do tại sao việc thiết kế prompt tốt là yếu tố then chốt để có được kết quả đáng tin cậy, chất lượng cao từ các Large Language Models (LLMs), và cách áp dụng các kỹ thuật prompt engineering một cách có hệ thống để liên tục cải thiện kết quả đồng thời tối ưu chi phí.
 
-### Các Chủ Đề Chính
+### Nội Dung Phiên Chia Sẻ
 
-#### Tạo Mã Hỗ Trợ Bởi AI
-- **Tạo mã**: Sử dụng AI để tạo boilerplate code, implement các hàm dựa trên comments, và tạo toàn bộ modules
-- **Refactoring mã**: Tận dụng AI để cải thiện chất lượng mã, tối ưu hiệu suất, và hiện đại hóa legacy code
-- **Hỗ trợ đa ngôn ngữ**: Các công cụ AI có thể làm việc trên nhiều ngôn ngữ lập trình và frameworks khác nhau
-- **Coding nhận biết ngữ cảnh**: Cách AI hiểu cấu trúc dự án, dependencies, và coding standards
+#### Tại Sao Prompt Tốt Là Quan Trọng
+Phiên chia sẻ mở đầu với việc khám phá lý do tại sao chất lượng prompt là yếu tố có tác động lớn nhất đến chất lượng output của LLM:
+- Prompt cấu trúc kém dẫn đến phản hồi mơ hồ, không nhất quán hoặc không liên quan
+- Prompt được thiết kế tốt giảm đáng kể nhu cầu xử lý và chỉnh sửa thủ công sau đó
+- Thiết kế prompt có hệ thống cho phép đạt kết quả chất lượng cao, có thể tái tạo trên nhiều use case khác nhau
+- Prompt tốt góp phần vào hiệu quả chi phí bằng cách giảm số lượng API calls và token usage cần thiết
 
-#### Testing & Đảm Bảo Chất Lượng
-- **Tạo test**: Tự động tạo unit tests, integration tests, và test cases từ mã
-- **Phân tích test coverage**: Sử dụng AI để xác định khoảng trống trong test coverage và đề xuất thêm tests
-- **Phát hiện lỗi**: Static analysis và code review hỗ trợ bởi AI để phát hiện sớm các vấn đề tiềm ẩn
-- **Performance testing**: Tạo load tests và performance benchmarks
+#### Khung Cấu Trúc Prompt
+Phần cốt lõi của phiên chia sẻ là một khung cấu trúc để xây dựng prompt hiệu quả, bao gồm năm thành phần chính:
 
-#### Tài Liệu & Quản Lý Kiến Thức
-- **Tự động tạo tài liệu**: Tạo API documentation, code comments, và technical documentation từ mã
-- **Cập nhật tài liệu**: Giữ tài liệu đồng bộ với thay đổi mã tự động
-- **Trích xuất kiến thức**: Tóm tắt codebases và tạo tài liệu onboarding
-- **Viết kỹ thuật**: Hỗ trợ viết technical documentation rõ ràng, súc tích
+- **Role (Vai trò):** Xác định LLM nên đóng vai gì (ví dụ: "Bạn là một Python developer giàu kinh nghiệm" hay "Bạn là một chuyên gia phân tích dữ liệu y tế") để thiết lập mức độ chuyên môn và tone phù hợp
+- **Instruction (Hướng dẫn):** Chỉ dẫn rõ ràng, cụ thể về những gì model cần làm — tránh mơ hồ và cung cấp hướng dẫn có thể hành động
+- **Context (Ngữ cảnh):** Thông tin nền, kiến thức lĩnh vực, hoặc chi tiết tình huống giúp model hiểu phạm vi và ràng buộc của tác vụ
+- **Examples (Ví dụ):** Các ví dụ few-shot minh họa định dạng input-output, phong cách và chất lượng mong đợi — đóng vai trò template cho model làm theo
+- **Constraints (Ràng buộc):** Ranh giới rõ ràng về định dạng output, độ dài, tone, ngôn ngữ, hoặc giới hạn nội dung để đảm bảo phản hồi đáp ứng yêu cầu cụ thể
 
-#### Debugging & Troubleshooting
-- **Phân tích lỗi**: Hỗ trợ AI trong việc hiểu error messages và stack traces
-- **Phân tích nguyên nhân gốc**: Giúp xác định nguyên nhân cơ bản của bugs và issues
-- **Incident response**: Sử dụng AI để phân tích logs, metrics, và traces trong incidents
-- **Tối ưu hiệu suất**: Xác định bottlenecks và đề xuất cải thiện
+#### Các Kỹ Thuật Nâng Cao
 
-#### Tích Hợp Với Quy Trình Phát Triển
-- **Tích hợp IDE**: AI assistants được nhúng trong các IDE phổ biến (VS Code, IntelliJ, v.v.)
-- **Tích hợp CI/CD**: Sử dụng AI trong pipelines cho code review, testing, và quyết định deployment
-- **Version control**: Tạo commit message hỗ trợ bởi AI và hỗ trợ code review
-- **Quản lý dự án**: Hỗ trợ AI trong task breakdown, estimation, và sprint planning
+Diễn giả sau đó đề cập đến một số kỹ thuật prompt engineering nâng cao:
 
-#### Best Practices Prompt Engineering
-- **Prompting hiệu quả**: Kỹ thuật viết prompts tạo ra kết quả chất lượng cao
-- **Tinh chỉnh lặp lại**: Cách tinh chỉnh prompts dựa trên outputs ban đầu
-- **Quản lý ngữ cảnh**: Cung cấp đúng lượng ngữ cảnh (mã, tài liệu, requirements)
-- **Patterns prompt**: Các pattern phổ biến cho các loại development tasks khác nhau
+- **Chain-of-Thought (CoT) Prompting:** Hướng dẫn model chia nhỏ các vấn đề phức tạp thành các bước lập luận trung gian trước khi đi đến câu trả lời cuối cùng. Kỹ thuật này cải thiện đáng kể độ chính xác cho các tác vụ yêu cầu lập luận logic, tính toán, hoặc phân tích nhiều bước.
 
-#### Quản Trị & An Toàn
-- **Chất lượng mã**: Đảm bảo mã được tạo bởi AI đáp ứng tiêu chuẩn chất lượng
-- **Cân nhắc bảo mật**: Ngăn AI giới thiệu vulnerabilities hoặc expose dữ liệu nhạy cảm
-- **Quyền riêng tư dữ liệu**: Hiểu dữ liệu nào được gửi đến dịch vụ AI và cách sử dụng
-- **Human-in-the-loop**: Khi nào và cách nào để liên quan human review trong quy trình hỗ trợ bởi AI
-- **Tuân thủ**: Đáp ứng yêu cầu quy định khi sử dụng công cụ AI
+- **Retrieval-Augmented Generation (RAG):** Kết hợp LLMs với hệ thống truy xuất kiến thức bên ngoài để grounding phản hồi trên thông tin thực tế, cập nhật. Cách tiếp cận này giảm hallucination và cho phép model trả lời câu hỏi về dữ liệu chuyên biệt hoặc độc quyền không nằm trong tập training.
 
-### Insights Kỹ Thuật Chi Tiết
+- **Role Prompting:** Gán các persona hoặc vai trò chuyên gia cụ thể cho model để ảnh hưởng đến phong cách, chiều sâu và góc nhìn của phản hồi. Kỹ thuật này đặc biệt hiệu quả cho các tác vụ yêu cầu chuyên môn lĩnh vực, như code review, phân tích pháp lý, hoặc tóm tắt y học.
 
-#### Hệ Sinh Thái Công Cụ Phát Triển AI
-Sự kiện bao gồm các danh mục công cụ phát triển AI khác nhau:
-- **Công cụ hoàn thành mã**: GitHub Copilot, Amazon CodeWhisperer, Tabnine
-- **Assistants dựa trên chat**: ChatGPT, Claude, coding assistants chuyên biệt
-- **Công cụ code review**: Code review và đề xuất hỗ trợ bởi AI
-- **Công cụ testing**: Test cases và test automation được tạo bởi AI
-- **Công cụ tài liệu**: Trình tạo tài liệu tự động
+### Kiến Thức Kỹ Thuật Quan Trọng
 
-#### Patterns Kiến Trúc Cho Tích Hợp AI
-- **Kiến trúc dựa trên agent**: Sử dụng AI agents có thể thực hiện các tác vụ phức tạp, nhiều bước
-- **RAG (Retrieval-Augmented Generation)**: Kết hợp AI với kiến thức codebase để có ngữ cảnh tốt hơn
-- **Fine-tuning vs prompt engineering**: Khi nào fine-tune models so với sử dụng prompts tốt hơn
-- **Cách tiếp cận hybrid**: Kết hợp nhiều công cụ và kỹ thuật AI
+#### Prompt Engineering Như Một Ngành Kỹ Thuật
+- Prompt engineering không chỉ là "đặt đúng câu hỏi" — đó là một quy trình có hệ thống, có thể lặp lại, tự động hóa và tối ưu
+- Thay đổi nhỏ trong cấu trúc prompt có thể dẫn đến sự khác biệt đáng kể về chất lượng output
+- Kiểm tra và đánh giá prompts với tập benchmark cases là cần thiết để đạt kết quả nhất quán
 
-#### Best Practices Cho Áp Dụng Team
-- **Bắt đầu nhỏ**: Bắt đầu với các use case rủi ro thấp như tài liệu và tests
-- **Thiết lập hướng dẫn**: Tạo tiêu chuẩn team cho việc sử dụng công cụ AI
-- **Đào tạo và onboarding**: Giúp thành viên team học cách sử dụng công cụ AI hiệu quả
-- **Đo lường tác động**: Theo dõi cải thiện năng suất và metrics chất lượng mã
+#### Đánh Đổi Chi Phí - Chất Lượng
+- Prompt có cấu trúc tốt thường đạt kết quả tốt hơn với model nhỏ, rẻ hơn so với prompt cấu trúc kém với model lớn, đắt hơn
+- Chain-of-Thought prompting có thể sử dụng nhiều tokens hơn mỗi request nhưng giảm tổng số lần lặp cần thiết
+- Đầu tư ban đầu vào prompt engineering được đền đáp thông qua giảm thời gian review và chỉnh sửa thủ công
 
-### Bài Học Quan Trọng
-
-#### AI Như Một Pair Programmer
-- AI hiệu quả nhất khi được sử dụng như một **công cụ hợp tác** bổ sung cho developers, không thay thế họ
-- Kết quả tốt nhất đến từ các developers hiểu codebase và có thể hướng dẫn AI hiệu quả
-- AI xuất sắc ở các tác vụ lặp lại, boilerplate code, và patterns phổ biến, giải phóng developers cho giải quyết vấn đề phức tạp
-
-#### Tầm Quan Trọng Của Ngữ Cảnh
-- Prompts chất lượng cao với ngữ cảnh tốt (kiến thức repository, coding standards, cấu trúc dự án) cải thiện đáng kể outputs của AI
-- Cung cấp examples và patterns từ codebase hiện có giúp AI tạo mã nhất quán hơn
-- Hiểu các giới hạn của AI context windows và làm việc trong các ràng buộc đó
-
-#### Quản Lý Rủi Ro
-- Bắt đầu với các use case rủi ro thấp (tài liệu, tests, refactoring) trước khi chuyển sang mã quan trọng cho business
-- Luôn review mã được tạo bởi AI, đặc biệt cho các operations nhạy cảm về bảo mật
-- Sử dụng đề xuất AI như điểm khởi đầu, không phải giải pháp cuối cùng
-
-#### Tích Hợp Với DevOps
-- Kết hợp công cụ AI với thực hành DevOps hiện có (version control, code review, automated testing) đảm bảo an toàn và khả năng kiểm tra
-- AI có thể nâng cao CI/CD pipelines nhưng không nên bỏ qua các quality gates quan trọng
-- Sử dụng AI để cải thiện, không thay thế, các quy trình phát triển hiện có
+#### Ứng Dụng Thực Tế
+- Các prompt template tự động có thể được tích hợp vào production pipelines để tương tác LLM nhất quán
+- Hệ thống dựa trên RAG hưởng lợi rất lớn từ retrieval prompts được thiết kế tốt hướng dẫn model cách sử dụng context được truy xuất
+- Role prompting kết hợp với constraints rất hiệu quả để tạo structured outputs (JSON, bảng, báo cáo)
 
 ### Bài Học Cá Nhân
 
-#### Ứng Dụng Thực Tế
-- Tôi học được cách sử dụng công cụ AI để tăng tốc các tác vụ lặp lại như viết boilerplate code, tạo unit tests, và tạo tài liệu
-- Tôi hiểu cách viết prompts hiệu quả tạo ra kết quả hữu ích cho development tasks
-- Tôi có thể tích hợp hỗ trợ AI vào quy trình coding hàng ngày hiệu quả hơn
+#### Phát Triển Kỹ Thuật
+- Phiên chia sẻ cho tôi mental model rõ ràng hơn về cách Role, Instruction, Context, Examples và Constraints tương tác để định hình hành vi LLM
+- Tôi học được cách coi prompt engineering như một ngành kỹ thuật hạng nhất, không phải là việc nghĩ sau
+- Các kỹ thuật nâng cao — đặc biệt là Chain-of-Thought và RAG — cung cấp cách tiếp cận thực tế mà tôi có thể áp dụng ngay vào các dự án của mình
 
-#### Phát Triển Kỹ Năng
-- Sự kiện củng cố rằng nền tảng vững chắc về kiến trúc, bảo mật, và clean code vẫn cần thiết
-- Tôi cần có khả năng đánh giá đề xuất được tạo bởi AI một cách phê phán và hiểu khi nào chúng phù hợp
-- Học cách làm việc với AI là một kỹ năng riêng cần thực hành và lặp lại
+#### Kỹ Năng Thực Hành
+- Tôi có được một khung cấu trúc cụ thể để thiết kế prompt nhất quán tạo ra kết quả chất lượng cao
+- Hiểu về đánh đổi chi phí-chất lượng giúp tôi đưa ra quyết định tốt hơn về việc chọn model và tối ưu prompt
+- Phiên Q&A cung cấp góc nhìn quý giá từ các practitioners khác đang áp dụng các kỹ thuật này trong nhiều lĩnh vực khác nhau
 
-#### Thay Đổi Tư Duy
-- Sự kiện thay đổi cách tôi nghĩ về việc sử dụng AI trong phát triển - không phải về thay thế developers mà bổ sung khả năng của họ
-- Tôi có động lực hơn để tích hợp hỗ trợ AI vào quy trình học tập và phát triển của mình
-- Tôi hiểu rằng công cụ AI đang phát triển nhanh chóng, và việc cập nhật với các khả năng mới là quan trọng
-
-#### Học Tập Tương Lai
-- Tôi muốn khám phá các công cụ và kỹ thuật phát triển AI nâng cao hơn
-- Tôi quan tâm đến việc học về fine-tuning models cho các use case cụ thể
-- Tôi thấy giá trị trong việc hiểu cách xây dựng công cụ phát triển hỗ trợ bởi AI của chính mình
+#### Cộng Đồng & Networking
+- Sự kiện tạo cơ hội kết nối với các practitioners khác quan tâm đến ứng dụng LLM
+- Các thảo luận trong sự kiện cung cấp ý tưởng mới để cải thiện quy trình prompt engineering của tôi
+- Là một phần của cộng đồng Cloud Mastery củng cố mối liên kết của tôi với hệ sinh thái công nghệ địa phương
 
 ### Trải Nghiệm Sự Kiện
 
-Sự kiện này mở mắt trong việc cho thấy AI đang chuyển đổi phát triển phần mềm như thế nào. Các demo thực tế và examples thực tế làm rõ rằng phát triển hỗ trợ bởi AI không phải là khái niệm tương lai mà là thực tế hiện tại.
+Tham dự phiên chia sẻ "Automated Prompt Engineering: Enhancing LLM Output Quality" tại Cloud Mastery là một trải nghiệm học tập rất có giá trị. Phiên chia sẻ cung cấp cách tiếp cận có cấu trúc, thực tế đối với một chủ đề ngày càng quan trọng trong phát triển phần mềm hiện đại.
 
-Sự cân bằng giữa việc thể hiện khả năng AI và thảo luận về quản trị và an toàn đặc biệt có giá trị. Nó giúp tôi hiểu cả cơ hội và trách nhiệm đi kèm với việc sử dụng AI trong phát triển.
-
-Sự kiện đã ảnh hưởng đến cách tôi tiếp cận các tác vụ coding, làm cho tôi suy nghĩ kỹ hơn về khi nào và cách nào để tận dụng hỗ trợ AI trong khi duy trì tiêu chuẩn chất lượng mã và bảo mật.
+Điều nổi bật nhất là khung cấu trúc prompt (Role, Instruction, Context, Examples, Constraints) và các demo thực tế của các kỹ thuật nâng cao như Chain-of-Thought và RAG. Đây là những kỹ thuật tôi có thể áp dụng trực tiếp vào công việc với các ứng dụng dựa trên LLM. Sự kiện củng cố niềm tin của tôi rằng thành thạo prompt engineering là điều cần thiết cho bất kỳ ai xây dựng giải pháp AI.
 
 ### Ảnh Sự Kiện
 
-![Enter image alt description](/images/4-Event/event2_img1.jpg)
-![Enter image alt description](/images/4-Event/event2_img2.jpg)
+![Cloud Mastery - Phiên chia sẻ Automated Prompt Engineering](/images/4-Event/event_2.jpg)

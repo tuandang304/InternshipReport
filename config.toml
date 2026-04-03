@@ -1,6 +1,4 @@
-baseURL = "https://36JungKwan.github.io/InternshipReport/"
-relativeURLs = true
-canonifyURLs = true
+baseURL = "https://tuandang304.github.io/InternshipReport/"
 
 # Change the default theme to be use when building the site with Hugo
 theme = "hugo-theme-learn"
