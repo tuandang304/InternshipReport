@@ -99,3 +99,4 @@ Sự kiện củng cố niềm đam mê của tôi về cloud computing và AI/M
 ### Ảnh Sự Kiện
 
 ![AWS re:Invent re:Cap HCMC 2025 - Phiên chia sẻ](/images/4-Event/event1_img.jpg)
+![AWS re:Invent re:Cap HCMC 2025 - Phiên chia sẻ](/images/4-Event/event1_1.jpg)
