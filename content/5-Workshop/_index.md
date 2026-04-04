@@ -4,6 +4,7 @@ date: 2026-04-03
 weight: 5
 chapter: false
 pre: " <b> 5. </b> "
+alwaysopen: true
 ---
 # Slothub — Building an AI-Powered Learning & Classroom Management Platform
 
@@ -33,3 +34,9 @@ The project demonstrates modern software architecture patterns using:
 4. [Infrastructure Setup](5.4-Infrastructure-Setup/)
 5. [Development & Deployment](5.5-Deployment/)
 6. [Cleanup](5.6-Cleanup/)
+7. [Environment Configuration](5.7-Environment-Config/)
+8. [Backend Spring Boot](5.8-Backend-Deep-Dive/)
+9. [AI Service (FastAPI)](5.9-AI-Service-Deep-Dive/)
+10. [Agent-Core & Slozy AI](5.10-Agent-Core-Slozy/)
+11. [Frontend React](5.11-Frontend-Integration/)
+12. [AWS Cloud Deployment](5.12-AWS-Cloud-Deployment/)
