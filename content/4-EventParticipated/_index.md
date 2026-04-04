@@ -43,11 +43,11 @@ During my internship, I participated in four AWS-related events and workshops. T
 
 ---
 
-### [Event 4 – AIML & Generative AI on AWS (AWS Cloud Mastery Series #1)](4.4-Event4/)
+### [Event 4 – Cloud Mastery Event: Infrastructure as Code (IaC)](4.4-Event4/)
 
-&emsp;**Event Name:** AIML & Generative AI on AWS – AWS Cloud Mastery Series #1  
+&emsp;**Event Name:** Cloud Mastery - Infrastructure as Code (IaC)  
 &emsp;**Role:** Attendee  
-&emsp;**Format:** Full-day technical session  
+&emsp;**Format:** Technical sharing session  
 
-&emsp;**Content:** This comprehensive session covered ML fundamentals (supervised/deep learning), the modern GenAI stack, and the Amazon Bedrock AgentCore framework. Detailed topics included embeddings (Amazon Titan), RAG workflows, managed AI services (Rekognition, Textract, Polly), and building scalable agents with AgentCore.  
-&emsp;**Outcomes:** Acquired a structured mental model of the end-to-end AI/ML spectrum on AWS, from low-level data preparation to building autonomous agents.
+&emsp;**Content:** This event dove deep into the Infrastructure as Code (IaC) methodology and using code to manage cloud resources instead of manual ClickOps. Topics included comparing AWS CloudFormation, AWS CDK, and Terraform, standard workflows for each, and the hidden risks of Configuration Drift.  
+&emsp;**Outcomes:** Understood the core of IaC as "Version Control for Infrastructure," learned to properly map tools to use cases (CDK for Developers, Terraform for Multi-cloud), and gained awareness of reliable production operations.

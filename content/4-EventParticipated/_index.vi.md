@@ -43,11 +43,11 @@ Trong thời gian thực tập, tôi đã tham gia bốn sự kiện và worksho
 
 ---
 
-### [Sự Kiện 4 – AIML & Generative AI trên AWS (AWS Cloud Mastery Series #1)](4.4-Event4/)
+### [Sự Kiện 4 – Sự kiện Cloud Mastery: Infrastructure as Code (IaC)](4.4-Event4/)
 
-&emsp;**Tên Sự Kiện:** AIML & Generative AI trên AWS – AWS Cloud Mastery Series #1  
+&emsp;**Tên Sự Kiện:** Cloud Mastery - Infrastructure as Code (IaC)  
 &emsp;**Vai Trò:** Người tham dự  
-&emsp;**Hình Thức:** Phiên kỹ thuật trọn ngày  
+&emsp;**Hình Thức:** Phiên chia sẻ kỹ thuật  
 
-&emsp;**Nội Dung:** Phiên học toàn diện bao gồm các kiến thức cơ bản về ML (supervised/deep learning), GenAI stack hiện đại, và framework Amazon Bedrock AgentCore framework. Các chủ đề chi tiết bao gồm embeddings (Amazon Titan), RAG workflows, các dịch vụ AI (Rekognition, Textract, Polly), và xây dựng agents với AgentCore.  
-&emsp;**Kết Quả:** Có được mô hình tư duy có cấu trúc về phổ AI/ML trên AWS từ đầu đến cuối, từ bước chuẩn bị dữ liệu cấp thấp đến việc xây dựng các tác nhân tự hành.
+&emsp;**Nội Dung:** Sự kiện đi sâu vào phương pháp Infrastructure as Code (IaC) và cách dùng code để quản lý hạ tầng đám mây thay cho ClickOps. Nội dung bao quát so sánh 3 công cụ phổ biến: AWS CloudFormation, AWS CDK và Terraform, quy trình làm việc chuẩn của từng công cụ, cũng như rủi ro tàng hình của Configuration Drift.  
+&emsp;**Kết Quả:** Hiểu được bản chất IaC chính là "Version Control cho Infrastructure", phân biệt rõ use-case khi nào dùng CloudFormation, CDK (thân thiện với Dev) hay Terraform (chuẩn Multi-cloud), và nhận thức được quan điểm vận hành an toàn.

@@ -15,6 +15,8 @@ chapter: false
 
 &emsp; **Email:** trumsc271@gmail.com
 
+&emsp; **Mã số sinh viên:** SE196418
+
 &emsp; **Trường:** Đại học FPT TP.HCM
 
 &emsp; **Ngành:** Trí Tuệ Nhân Tạo

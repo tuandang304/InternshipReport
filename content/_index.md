@@ -17,6 +17,8 @@ chapter: false
 
 &emsp; **Email:** trumsc271@gmail.com
 
+&emsp; **Student ID:** SE196418
+
 &emsp; **University:** FPT University Ho Chi Minh
 
 &emsp; **Major:** Artificial Intelligence
