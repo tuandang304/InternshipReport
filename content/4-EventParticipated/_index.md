@@ -6,7 +6,7 @@ chapter: false
 pre: " <b> 4. </b> "
 ---
 
-During my internship, I participated in four AWS-related events and workshops. They helped me strengthen both my cloud fundamentals and my understanding of more advanced topics like AI/ML, security, data, and DevOps.
+During my internship, I participated in five AWS-related events and workshops. They helped me strengthen both my cloud fundamentals and my understanding of more advanced topics like AI/ML, security, data, and DevOps.
 
 ---
 
@@ -51,3 +51,14 @@ During my internship, I participated in four AWS-related events and workshops. T
 
 &emsp;**Content:** This event dove deep into the Infrastructure as Code (IaC) methodology and using code to manage cloud resources instead of manual ClickOps. Topics included comparing AWS CloudFormation, AWS CDK, and Terraform, standard workflows for each, and the hidden risks of Configuration Drift.  
 &emsp;**Outcomes:** Understood the core of IaC as "Version Control for Infrastructure," learned to properly map tools to use cases (CDK for Developers, Terraform for Multi-cloud), and gained awareness of reliable production operations.
+
+---
+
+### [Event 5 – Cloud Mastery #3: Cloud Security](4.5-Event5/)
+
+&emsp;**Event Name:** Cloud Mastery #3 - Cloud Security  
+&emsp;**Role:** Speaker  
+&emsp;**Format:** Technical sharing & community interaction  
+
+&emsp;**Content:** I had the opportunity to speak about the fundamentals of AWS security services, specifically Identity & Access Management (IAM) and Single Sign-On (SSO). The event also explored critical strategies for Network and Application protection, providing a comprehensive view of building secure cloud environments.  
+&emsp;**Outcomes:** Gained experience in technical knowledge sharing, deepened understanding of core cloud security components, and reinforced learning through engaging with shared community perspectives.

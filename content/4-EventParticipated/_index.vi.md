@@ -6,7 +6,7 @@ chapter: false
 pre: " <b> 4. </b> "
 ---
 
-Trong thời gian thực tập, tôi đã tham gia bốn sự kiện và workshop liên quan đến AWS. Các sự kiện này đã giúp tôi củng cố cả kiến thức nền tảng về cloud và hiểu biết về các chủ đề nâng cao như AI/ML, bảo mật, dữ liệu, và DevOps.
+Trong thời gian thực tập, tôi đã tham gia năm sự kiện và workshop liên quan đến AWS. Các sự kiện này đã giúp tôi củng cố cả kiến thức nền tảng về cloud và hiểu biết về các chủ đề nâng cao như AI/ML, bảo mật, dữ liệu, và DevOps.
 
 ---
 
@@ -51,3 +51,14 @@ Trong thời gian thực tập, tôi đã tham gia bốn sự kiện và worksho
 
 &emsp;**Nội Dung:** Sự kiện đi sâu vào phương pháp Infrastructure as Code (IaC) và cách dùng code để quản lý hạ tầng đám mây thay cho ClickOps. Nội dung bao quát so sánh 3 công cụ phổ biến: AWS CloudFormation, AWS CDK và Terraform, quy trình làm việc chuẩn của từng công cụ, cũng như rủi ro tàng hình của Configuration Drift.  
 &emsp;**Kết Quả:** Hiểu được bản chất IaC chính là "Version Control cho Infrastructure", phân biệt rõ use-case khi nào dùng CloudFormation, CDK (thân thiện với Dev) hay Terraform (chuẩn Multi-cloud), và nhận thức được quan điểm vận hành an toàn.
+
+---
+
+### [Sự Kiện 5 – Cloud Mastery #3: Cloud Security](4.5-Event5/)
+
+&emsp;**Tên Sự Kiện:** Cloud Mastery #3 - Cloud Security  
+&emsp;**Vai Trò:** Diễn giả (Speaker)  
+&emsp;**Hình Thức:** Phiên chia sẻ kỹ thuật & tương tác cộng đồng  
+
+&emsp;**Nội Dung:** Tôi đã có cơ hội chia sẻ về những kiến thức cơ bản của các dịch vụ bảo mật trên AWS, đặc biệt là Identity & Access Management (IAM) và Single Sign-On (SSO). Sự kiện cũng bao quát các chiến lược quan trọng để bảo vệ Mạng và Ứng dụng, cung cấp một cái nhìn toàn diện về việc xây dựng môi trường đám mây an toàn.  
+&emsp;**Kết Quả:** Tích lũy kinh nghiệm chia sẻ kiến thức kỹ thuật, đào sâu hiểu biết về các thành phần bảo mật cốt lõi trên đám mây, đồng thời củng cố việc học thông qua việc trao đổi các góc nhìn từ cộng đồng.
